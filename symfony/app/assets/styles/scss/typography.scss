@@ -1,0 +1,93 @@
+/* Typography */
+
+body {
+  font-family: $font-main;
+  line-height: 1.4rem;
+  color: $font-color;
+}
+
+p,
+td,
+th,
+li,
+dd {
+  text-align: justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  font-weight: bold;
+  font-family: $font-h;
+}
+
+h5 {
+  font-size: 1.25em;
+}
+
+h4 {
+  font-size: 1.563em;
+}
+
+h3 {
+  font-size: 1.953em;
+}
+
+h2 {
+  font-size: 2.441em;
+}
+
+p {
+  font-size: 1.25em;
+  margin-top: $main-margin;
+  margin-bottom: $main-margin;
+}
+
+.main h1 {
+  font-size: 3.052em;
+  margin-bottom: 3.5rem;
+  font-weight: bold;
+  font-family: $font-h;
+}
+
+.title a {
+  text-decoration: none;
+  font-family: $font-header;
+}
+
+@media (max-width: 767px) {
+  h5 {
+    font-size: 1.2em;
+  }
+  
+  h4 {
+    font-size: 1.44em;
+  }
+
+  h3 {
+    font-size: 1.728em;
+  }
+
+  h2 {
+    font-size: 2.074em;
+  }
+
+  .main h1 {
+    font-size: 2.488em;
+  }
+
+  p,
+  td,
+  th,
+  li,
+  dd {
+    text-align: left;
+  }
+}

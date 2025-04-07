@@ -1,0 +1,66 @@
+/* Container */
+
+* {
+  box-sizing: border-box;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+ol,
+ul {
+  padding-left: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Placement */
+
+body {
+  display: grid;
+  grid-template-columns: [first] 15% [second] auto [third] 15% [end];
+  grid-template-rows: [row-start] auto [row2-start] auto [row3-start] auto [row-end];
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: $body-background-color;
+  background-image: url('../images/background.jpg');
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+
+body a {
+  color: $link-colors;
+}
+
+body a:hover {
+  color: $link-colors;
+}
+
+.main {
+  grid-column: second / third;
+  grid-row: row2-start / row3-start;
+  padding: 3em;
+}
+
+.two-column-div {
+  column-count: 2;
+}
+
+
+@media (max-width: 767px) {
+  body {
+    grid-template-columns: [first] 8% [second] auto [third] 8% [end];
+  }
+
+  .main {
+    grid-column: first / end;
+    padding: 2em;
+  }
+}

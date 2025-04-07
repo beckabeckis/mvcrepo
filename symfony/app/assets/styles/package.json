@@ -1,0 +1,19 @@
+{
+  "name": "styles",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "lint": "stylelint \"**/*.scss\"",
+    "style": "sass scss/style.scss ../styles/app.css --no-source-map"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "normalize.css": "^8.0.1",
+    "sass": "^1.86.3",
+    "stylelint": "^16.18.0",
+    "stylelint-config-sass-guidelines": "^12.1.0"
+  }
+}

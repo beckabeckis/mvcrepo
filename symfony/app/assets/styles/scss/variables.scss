@@ -1,0 +1,22 @@
+@use 'fonts';
+@use 'sass:color';
+
+$background-color: #bcb29a;
+$background-color-blend: #827765;
+$border-color: color.adjust($background-color, $lightness: -50%);
+
+$main-background-color: rgba(238, 235, 227, 0.9);
+$body-background-color: rgba(238, 236, 227, 0.6);
+$accent-color: #bfd6c0;
+$accent-border-color: color.adjust($accent-color, $lightness: -20%);
+
+$title-font-color: #151916;
+$font-color: #333;
+$link-colors: #353d41;
+
+
+$font-header: 'JuliusSansOne-Regular', Calibri, 'Trebuchet MS', sans-serif;
+$font-h: 'Questrial-Regular', Cambria, Cochin, Georgia, serif;
+$font-main: 'Raleway-Regular', Tahoma, Geneva, Verdana, sans-serif;
+
+$main-margin: 1.96rem;
