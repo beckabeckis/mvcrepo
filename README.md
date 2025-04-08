@@ -3,7 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## My report repository
 
-![mvc](../report/app/public/img/mvc.jpg)
+![mvc](/app/public/img/mvc.jpg)
 
 This is the repository to my reportwebbsite in the cource MVC.
 
