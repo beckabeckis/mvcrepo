@@ -3,11 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## My report repository
 
-<<<<<<< HEAD
 ![mvc](/symfony/app/public/img/mvc.jpg)
-=======
-![mvc](/app/public/img/mvc.jpg)
->>>>>>> refs/remotes/origin/main
 
 This is the repository to my reportwebbsite in the cource MVC.
 
