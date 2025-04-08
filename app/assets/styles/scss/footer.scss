@@ -1,0 +1,27 @@
+/* Footer */
+
+.footer {
+  grid-column: first / end;
+  grid-row: row3-start / row-end;
+  display: grid;
+  grid-template-columns: [first] 60% [second] auto [end];
+  grid-template-rows: [row-start] auto [row-end];
+  padding: 0 10%;
+  background-color: $background-color;
+  border-top: 2px solid $border-color;
+}
+
+.contacts {
+  grid-column: first / second;
+  grid-row: row-start / row-end;
+  padding: 1em;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    font-size: 1rem;
+    grid-column: first / end;
+    grid-row: row3-start / row-end;
+    padding: 1em 0;
+  }
+}

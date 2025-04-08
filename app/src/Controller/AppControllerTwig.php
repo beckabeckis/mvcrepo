@@ -35,6 +35,26 @@ class AppControllerTwig extends AbstractController
     #[Route("/lucky", name: "lucky")]
     public function lucky(): Response
     {
-        return $this->render('lucky.html.twig');
+        $number = random_int(0, 100);
+
+        $data = [
+            'number' => $number
+        ];
+
+        return $this->render('lucky.html.twig', $data);
+    }
+
+    #[Route("/api", name: "api")]
+    public function api(): Response
+    {
+        $routes = [
+            'quotes' => 'quote',
+        ];
+
+        $data = [
+            'routes' => $routes,
+        ];
+
+        return $this->render('api.html.twig', $data);
     }
 }

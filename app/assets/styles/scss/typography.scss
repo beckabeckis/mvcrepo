@@ -46,8 +46,12 @@ h2 {
 
 p {
   font-size: 1.25em;
-  margin-top: $main-margin;
-  margin-bottom: $main-margin;
+  margin-top: $half-main-margin;
+  margin-bottom: $half-main-margin;
+}
+
+.start {
+  text-align: start;
 }
 
 .main h1 {
@@ -55,6 +59,7 @@ p {
   margin-bottom: 3.5rem;
   font-weight: bold;
   font-family: $font-h;
+  line-height: 3rem;
 }
 
 .title a {

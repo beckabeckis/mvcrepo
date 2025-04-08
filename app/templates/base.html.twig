@@ -24,11 +24,21 @@
                 <li><a href="{{ path('about') }}">About</a></li>
                 <li><a href="{{ path('report') }}">Report</a></li>
                 <li><a href="{{ path('lucky') }}">Lucky</a></li>
+                <li><a href="{{ path('api') }}">API</a></li>
             </ul>
         </nav>
         </header>
         <div class="main">
         {% block body %}{% endblock %}
         </div>
+        <footer class="footer">
+            <div class="contacts">
+            <p>Kontakt:</p>
+                <ul>
+                    <li>Rebecka Corell - reco23@student.bth.se</li>
+                    <li>Projektlänk: <a href="https://github.com/beckabeckis/mvcrepo" target="_blank">https://github.com/beckabeckis/mvcrepo</a></li>
+                </ul>
+            </div>
+        </footer>
     </body>
 </html>
