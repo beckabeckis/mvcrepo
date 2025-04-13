@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card landingpage{% endblock %}
+
+{% block body %}
+    <h1>Card landingpage</h1>
+
+    <p>This is the card landingpage with links to card pages.</p>
+    <p><a href="{{ path('deck') }}">card/deck</a></p>
+    <p><a href="{{ path('shuffle') }}">card/deck/shuffle</a></p>
+    <p><a href="{{ path('draw') }}">card/deck/draw</a></p>
+
+{% endblock %}

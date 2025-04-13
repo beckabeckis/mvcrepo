@@ -1,0 +1,118 @@
+/* Container */
+
+* {
+  box-sizing: border-box;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+.main h1 {
+  border-bottom: 4px double rgb(92, 67, 13);
+}
+
+.die {
+  font-size: 2em;
+}
+
+ol,
+ul {
+  padding-left: 1.5em;
+}
+
+.hidden {
+  display: none !important;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Placement */
+
+body {
+  display: grid;
+  grid-template-columns: [first] 10% [second] auto [third] 10% [end];
+  grid-template-rows: [row-start] 11rem [row2-start] auto [row3-start] 10rem [row-end];
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: $body-background-color;
+  background-image: url('../images/background.jpg');
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+
+body a {
+  color: $link-colors;
+}
+
+body a:hover {
+  color: $link-colors;
+}
+
+.main {
+  grid-column: second / third;
+  grid-row: row2-start / row3-start;
+  padding: 3em;
+}
+
+.two-column-div {
+  column-count: 2;
+}
+
+.lucky {
+  text-align: center;
+  font-size: 10em;
+  position: absolute;
+  margin-left: -200px;
+  left: 50%;
+  padding: 50px;
+  color: rgb(71, 211, 113);
+  animation-duration: 4s;
+  animation: spin 4s linear infinite;
+  font-family: fantasy;
+}
+
+.button {
+  border: 1px solid rgb(69, 63, 51);
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  background-color: rgb(224, 216, 200);
+}
+
+
+@media (max-width: 767px) {
+  body {
+    grid-template-columns: [first] 8% [second] auto [third] 8% [end];
+  }
+
+  .main {
+    grid-column: first / end;
+    padding: 2em;
+  }
+}
+
+/* The animation code */
+@keyframes spin {
+  0% {
+    color: rgb(71, 211, 113);
+    font-size: 10em;
+  }
+
+  50% {
+    color: rgb(69, 26, 187);
+    margin-left: -300px;
+    font-size: 30em;
+  }
+
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+    color: rgb(71, 211, 113);
+    font-size: 10em;
+  }
+}

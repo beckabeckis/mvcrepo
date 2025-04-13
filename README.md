@@ -3,7 +3,7 @@
 <!-- ABOUT THE PROJECT -->
 ## My report repository
 
-![mvc](/symfony/app/public/img/mvc.jpg)
+![mvc](.img/mvc.jpg)
 
 This is the repository to my reportwebbsite in the cource MVC.
 
