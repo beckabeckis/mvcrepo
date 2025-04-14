@@ -10,4 +10,42 @@
     <p><a href="{{ path('shuffle') }}">card/deck/shuffle</a></p>
     <p><a href="{{ path('draw') }}">card/deck/draw</a></p>
 
+    <br>
+
+    <h2>Klasser</h2>
+
+    <p>
+        Jag har börjat med att skapa klassen 'Card' som tar emot argumenten 'number' och 
+        'color', vilket bestämmer vilket kort det är. Till den klassen finns metoden 
+        'getCard()' som utifrån 'number' och 'color' bestämmer en string, t.ex. '[♥A]' för 
+        hjärter ess, och returnerar stringen. Sedan har jag även gjort klassen 'CardGraphic' 
+        som ärver av klassen 'Card' men skriver över metoden 'getCard()' och istället för 
+        en string med tecken så returnar den bara ett utf-8 tecken med korresponderande kort, 
+        t.ex. '🂱' för hjärter ess.
+    </p>
+    <p>
+        Jag skapade sedan en klass 'DeckOfCards' som i konstruktorn skapar ett unikt 
+        objekt av klassen 'CardGraphic' för varje kort i en kortlek och sparar varje kort i 
+        en array. Den har även en metod för att hämta en array av alla kort, alltså ut-8 
+        tecknet från objekten,och retrunerar det. Eftersom att jag har lagt in alla kort i 
+        ordning så blir den retrunerade arrayen med korten också i ordning. En liknande metod 
+        gör samma sak fast den gör lokal kopia av alla objekt som sedan shufflas så att den 
+        returnerade arrayen blir i en random ordning. Det finns även en metod som 'drar' ett 
+        random kort, alltså den väljer ut ett random objekt i arrayen, tar bort objektet och 
+        returnerar kortet från objektet. Sedan finns även en metod som returnerar hur många 
+        objekt som finns i kortleken.
+    </p>
+    <p>
+        Jag har även skapat en klass 'CardHand' som i konstruktorn tar emot ett argument med 
+        ett objekt av klassen 'DeckOfCards'. Den har en metod som drar ett kort från 'DeckOfCards' 
+        objektet med hjälp av den klassens 'drawRandomCard' metod och lägger in den i arrayen 
+        '$hand' som är initialiserad som en klassvariabel. Den tar även emot parametern $num
+        om man vill dra mer än ett kort, $num är default 1. Den ahhr även en metod för att returnera 
+        alla kort i '$hand' och en metod som returnerar 'DeckOfCards' objektet.
+    </p>
+
+
+
+
+    
 {% endblock %}

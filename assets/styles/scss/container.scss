@@ -84,6 +84,19 @@ body a:hover {
   background-color: rgb(224, 216, 200);
 }
 
+.card {
+  font-size: 5rem;
+  float: left;
+  margin: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cards-left {
+  float: left;
+  width: 100%;
+  margin-top: 2rem;
+}
+
 
 @media (max-width: 767px) {
   body {

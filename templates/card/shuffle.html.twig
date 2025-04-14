@@ -5,4 +5,8 @@
 {% block body %}
     <h1>Card shuffle</h1>
 
+    {% for card in deck %}
+        <p class="card">{{ card}}</p>
+    {% endfor %}
+
 {% endblock %}

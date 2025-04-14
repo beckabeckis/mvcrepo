@@ -3,8 +3,7 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>Seesion</h1>
-    <p>Card: {{ card }}</p>
-    <p>CardHand: {{ cardHand }}</p>
-    <p>DeckOfCards: {{ deckOfCards }}</p>
+    <h1>Session</h1>
+    <p>CardHand: {{ dump(cardHand) }}</p>
+    <p>DeckOfCards: {{ dump(deckOfCards) }}</p>
 {% endblock %}

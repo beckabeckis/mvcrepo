@@ -320,41 +320,6 @@ template {
   font-family: "Raleway-Regular";
   src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf") format("woff2");
 }
-blockquote {
-  font-style: italic;
-  margin-left: 1em;
-  padding-left: 1em;
-  border-left: 0.5em solid #f5f5f5;
-}
-
-code {
-  margin: 0 0.1em;
-  padding: 0.1em 0.2em;
-  border: 1px solid rgb(52.3035714286, 47.125, 34.6964285714);
-  border-radius: 0.3em;
-  background: #bcb29a;
-  font-family: monospace;
-  font-size: 0.85rem;
-  line-height: 1.9824;
-}
-
-pre {
-  padding: 0 1em;
-  border: 1px solid rgb(52.3035714286, 47.125, 34.6964285714);
-  border-radius: 0.3em;
-  background: #bcb29a;
-}
-
-pre code {
-  display: block;
-  margin: 0;
-  padding: 1.1111em 0;
-  border: 0 none;
-  background: transparent;
-  overflow-x: auto;
-  line-height: 1.4;
-}
-
 /* Container */
 * {
   box-sizing: border-box;
@@ -435,6 +400,19 @@ body a:hover {
   margin: 5px;
   padding: 5px;
   background-color: rgb(224, 216, 200);
+}
+
+.card {
+  font-size: 5rem;
+  float: left;
+  margin: 1rem;
+  margin-bottom: 3rem;
+}
+
+.cards_left {
+  float: left;
+  width: 100%;
+  margin-top: 2rem;
 }
 
 @media (max-width: 767px) {
@@ -664,6 +642,7 @@ p {
   color: #004085;
   background-color: #cce5ff;
   border-color: #b8daff;
+  float: left;
 }
 
 .flash-notice::before {
@@ -675,6 +654,7 @@ p {
   color: #856404;
   background-color: #fff3cd;
   border-color: #ffeeba;
+  float: left;
 }
 
 .flash-warning::before {

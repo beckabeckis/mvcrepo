@@ -49,6 +49,9 @@ class AppControllerTwig extends AbstractController
     {
         $routes = [
             'quotes' => 'quote',
+            'deck' => 'api_deck',
+            'shuffle' => 'api_shuffle',
+            'draw' => 'api_draw',
         ];
 
         $data = [

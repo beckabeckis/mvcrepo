@@ -3,8 +3,9 @@
 {% block title %}Home{% endblock %}
 
 {% block body %}
-    <h1>Seesion Deleted</h1>
-    <p>Card: {{ card }}</p>
-    <p>CardHand: {{ cardHand }}</p>
-    <p>DeckOfCards: {{ deckOfCards }}</p>
+    <h1>Session Deleted</h1>
+    <p>CardHand: {{ dump(cardHand) }}</p>
+    <p>DeckOfCards: {{ dump(deckOfCards) }}</p>
+
+    {{ include('flash.html.twig') }}
 {% endblock %}

@@ -10,24 +10,65 @@
     <section id="kmom01">
         <h2>kmom01</h2>
         <p>
-            Jag har förra året gått er kurs om objektorienterad pyhton där jag lärde mig mycket om objektorienterad programmering. Jag har även gått några andra kurser tidigare som har intruducerat ämnet, däribland C# intruduktion som handlade mycket om det. Jag känner mig ganska säker kring klasser och metoder men tror att det fortfarande finns mycket att lära sig.
+            Jag har förra året gått er kurs om objektorienterad pyhton där jag lärde mig mycket om objektorienterad 
+            programmering. Jag har även gått några andra kurser tidigare som har intruducerat ämnet, däribland C# 
+            intruduktion som handlade mycket om det. Jag känner mig ganska säker kring klasser och metoder men tror 
+            att det fortfarande finns mycket att lära sig.
         </p>
         <p>
-            Man behöver veta syntaxen som PHP har för att bygga upp objekt och klasser, vilket verkar vara väldigt likanade andra programmeringsspråks syntax. Man behöver förstå skullnaden av ett objekt och en klass. En klass är själva 'modellen' som ett objekt skapas ifrån. En klass bestämmer vilka metoder och liknande ett objekt ska ha, och för varje objekt som man skapar så kan man olika parametrar för att göra objektet anpassat till vad man behöver.
+            Man behöver veta syntaxen som PHP har för att bygga upp objekt och klasser, vilket verkar vara väldigt 
+            likanade andra programmeringsspråks syntax. Man behöver förstå skullnaden av ett objekt och en klass. 
+            En klass är själva 'modellen' som ett objekt skapas ifrån. En klass bestämmer vilka metoder och liknande 
+            ett objekt ska ha, och för varje objekt som man skapar så kan man olika parametrar för att göra objektet 
+            anpassat till vad man behöver.
         </p>
         <p>
-            Detta är ett helt nytt ramverk för mig, men man kan se likheter i strukturen i symfony och andra ramverk jag har jobbat med innan. Det är mycket nytt och nog det mest komplicerade ramverkat jag har jobbat med, men när man lär sig var man lägger html filer, bilder, css och liknanade så blir det lättare att jobba med den. Jag tykcer att det är kul att lära sig och upp till en viss grad så ju mer kolicerade ramverk ju mer möjligheter finns det för projektet.
+            Detta är ett helt nytt ramverk för mig, men man kan se likheter i strukturen i symfony och andra ramverk 
+            jag har jobbat med innan. Det är mycket nytt och nog det mest komplicerade ramverkat jag har jobbat med, 
+            men när man lär sig var man lägger html filer, bilder, css och liknanade så blir det lättare att jobba med 
+            den. Jag tykcer att det är kul att lära sig och upp till en viss grad så ju mer kolicerade ramverk ju mer 
+            möjligheter finns det för projektet.
         </p>
         <p>
-            Allting verkar ju väldigt bra att de har tagit med men om det är några saker som jag skulle vilja lyfta fram så är det 'Documenting your Code' och 'Security'. Att lära sig dokumentera sin kod tycker jag är väldigt viktigt, specciellt när man jobbar med andra men även för sig själv i framtiden, och det är något som jag skulle vilja lära mig göra bättre. Säkerhet blir vikitigare och viktigare i dagens samhälle och det är något som jag känner att jag inte kan så bra än men vill gärna bli väldigt bra på.
+            Allting verkar ju väldigt bra att de har tagit med men om det är några saker som jag skulle vilja lyfta 
+            fram så är det 'Documenting your Code' och 'Security'. Att lära sig dokumentera sin kod tycker jag är väldigt 
+            viktigt, specciellt när man jobbar med andra men även för sig själv i framtiden, och det är något som jag 
+            skulle vilja lära mig göra bättre. Säkerhet blir vikitigare och viktigare i dagens samhälle och det är något 
+            som jag känner att jag inte kan så bra än men vill gärna bli väldigt bra på.
         </p>
         <p>
-            Jag har lärt mig väldigt mycket nytt denna veckan, men mitt TIL för denna kmom blir att jag har märkt att jag har mycket bättre koll på filsystemet och hur saker hänger ihop, specciellt i ett mer komplicerat ramverk som symfony.
+            Jag har lärt mig väldigt mycket nytt denna veckan, men mitt TIL för denna kmom blir att jag har märkt att jag 
+            har mycket bättre koll på filsystemet och hur saker hänger ihop, specciellt i ett mer komplicerat ramverk som symfony.
         </p>
     </section>
     <section id="kmom02">
         <h2>kmom02</h2>
-        <p>Redovisningstext för kmom02</p>
+        <p>
+            En klass kan ärva från en annan klass, det innebär att den kan använda sig av samma konstruktor och ärver 
+            alla metoder från den klassen och kan lägga till egna metoder som är specefika för den ärvande klassen. 
+            Komposition är en realation mellan två klasser där den ena klassen är starkt beroende av den andra klassen, 
+            det finns även en typ av komposition som kalla aggregat där kopplingen inte är lika stark. 
+            Ett interface kan användas för att visa vilka metoder som klasser som är kopplade till interfacet kommer 
+            att ha, det är lite som en 'kontrakt' för vilka metoder klasserna måste ha.
+            Ett trait är som en klass med metoder som man kan koppla till flera riktiga klasser och klasser kan ha flera 
+            traits. Om en klass använder ett trait så får den de metoder som traitet har.
+        </p>
+        <p>
+            Jag använde mig av en Card klass som skapar objekt av kort, en CardGraphic klass som ärver från Cardklassen men 
+            dess kort är mer grafiska än Card klassens. Sedan har jag en klass DeckOfCards som skapar ett Card objekt för varje kort 
+            i en kortlek och en CardHand klass som använder sig av ett objekt av DeckOfCards klassen för att dra kort från den.
+            Routerna använder sig sedan av klasserna för att få fram den logik som de behöver. DeckOfCards klassen har en metod för att få fram 
+            korten i ordning och en för att få fram korten shufflade. Jag blev väldigt nöjd med min lösning och känner att jag har fått 
+            med alla funktioner jag vill ha med. Jag kände inte att jag hade tid för de optionella uppgifterna så hade kunnat förbättras 
+            av att implementera de med, annars är jag väldigt nöjd.
+        </p>
+        <p>
+            Det mer lättare och lättare att förstå hur symfony fugnerar och hur filsystemet ör uppbyggt. Det är kul att jobba 
+            med det då det är lite mer komplicerat och det finns mycket funktioner och liknande man kan få in då.
+        </p>
+        <p>
+            Denna veckan är mitt TIL traits. Det känns som en väldigt samrt sak att ha, gör att koden kan bli ännu mera DRY.
+        </p>
     </section>
     <section id="kmom03">
         <h2>kmom03</h2>

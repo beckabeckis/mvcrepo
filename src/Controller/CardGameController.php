@@ -2,9 +2,9 @@
 
 namespace App\Controller;
 
-// use App\Dice\Card;
-// use App\Dice\CardHand;
-// use App\Dice\DeckOfCards;
+use App\Card\Card;
+use App\Card\CardHand;
+use App\Card\DeckOfCards;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -17,16 +17,17 @@ class CardGameController extends AbstractController
     public function session(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
-        $session->set("card", 0);
-        $session->set("card_hand", 0);
-        $session->set("deck_of_cards", 0);
+    ): Response {
+        if (!$session->get("deck_of_cards")) {
+            $deck = new DeckOfCards();
+            $hand = new CardHand($deck);
 
+            $session->set("deck_of_cards", $deck);
+            $session->set("card_hand", $hand);
+        }
         $data = [
-            "card" => $session->get("card"),
-            "cardHand" => $session->get("card_hand"),
             "deckOfCards" => $session->get("deck_of_cards"),
+            "cardHand" => $session->get("card_hand"),
         ];
 
         return $this->render('session.html.twig', $data);
@@ -36,14 +37,16 @@ class CardGameController extends AbstractController
     public function sessionDelete(
         Request $request,
         SessionInterface $session
-    ): Response
-    {
-        $session->set("card", null);
+    ): Response {
         $session->set("card_hand", null);
         $session->set("deck_of_cards", null);
 
+        $this->addFlash(
+            'notice',
+            'Nu är sessionen raderad'
+        );
+
         $data = [
-            "card" => $session->get("card"),
             "cardHand" => $session->get("card_hand"),
             "deckOfCards" => $session->get("deck_of_cards"),
         ];
@@ -52,26 +55,133 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card", name: "card")]
-    public function card(): Response
-    {
+    public function card(
+        Request $request,
+        SessionInterface $session
+    ): Response {
+        if (!$session->get("deck_of_cards")) {
+            $deck = new DeckOfCards();
+            $hand = new CardHand($deck);
+
+            $session->set("deck_of_cards", $deck);
+            $session->set("card_hand", $hand);
+        }
+
         return $this->render('card/card.html.twig');
     }
 
     #[Route("/card/deck", name: "deck")]
-    public function deck(): Response
-    {
-        return $this->render('card/deck.html.twig');
+    public function deck(
+        SessionInterface $session
+    ): Response {
+        if (!$session->get("deck_of_cards")) {
+            $deck = new DeckOfCards();
+            $hand = new CardHand($deck);
+
+            $session->set("deck_of_cards", $deck);
+            $session->set("card_hand", $hand);
+        }
+
+        $deck = $session->get("deck_of_cards");
+        $data = [
+            "deck" => $deck->getDeckInOrder()
+        ];
+
+        // var_dump($data["deck"]);
+
+        return $this->render('card/deck.html.twig', $data);
     }
 
     #[Route("/card/deck/shuffle", name: "shuffle")]
-    public function shuffle(): Response
-    {
-        return $this->render('card/shuffle.html.twig');
+    public function shuffle(
+        SessionInterface $session
+    ): Response {
+        $deck = new DeckOfCards();
+        $hand = new CardHand($deck);
+
+        $session->set("deck_of_cards", $deck);
+        $session->set("card_hand", $hand);
+
+        $deck = $session->get("deck_of_cards");
+        $data = [
+            "deck" => $deck->getDeckInRandom(),
+            "numOfCards" => $deck->getNumOfCards()
+        ];
+        return $this->render('card/shuffle.html.twig', $data);
     }
 
     #[Route("/card/deck/draw", name: "draw")]
-    public function draw(): Response
-    {
-        return $this->render('card/draw.html.twig');
+    public function draw(
+        SessionInterface $session
+    ): Response {
+        if (!$session->get("deck_of_cards")) {
+            $deck = new DeckOfCards();
+            $hand = new CardHand($deck);
+
+            $session->set("deck_of_cards", $deck);
+            $session->set("card_hand", $hand);
+        }
+
+        $hand = $session->get("card_hand");
+        $deck = $session->get("deck_of_cards");
+
+        $numOfCards = $deck->getNumOfCards();
+
+        if ($numOfCards == 0) {
+            $this->addFlash(
+                'warning',
+                'No more cards!'
+            );
+        } else {
+            $hand->drawCard();
+        }
+
+        $data = [
+            "hand" => $hand->showCards(),
+            "numOfCards" => $deck->getNumOfCards()
+        ];
+
+        return $this->render('card/draw.html.twig', $data);
+    }
+
+    #[Route("/card/deck/draw/{num<\d+>}", name: "draw_more")]
+    public function drawMore(
+        int $num,
+        SessionInterface $session
+    ): Response {
+        if (!$session->get("deck_of_cards")) {
+            $deck = new DeckOfCards();
+            $hand = new CardHand($deck);
+
+            $session->set("deck_of_cards", $deck);
+            $session->set("card_hand", $hand);
+        }
+
+        $hand = $session->get("card_hand");
+        $deck = $session->get("deck_of_cards");
+
+        $numOfCards = $deck->getNumOfCards();
+
+        if ($numOfCards == 0) {
+            $this->addFlash(
+                'warning',
+                'No more cards!'
+            );
+        } elseif ($numOfCards < $num) {
+            $hand->drawCard($numOfCards);
+            $this->addFlash(
+                'notice',
+                'You took the last off the cards!'
+            );
+        } else {
+            $hand->drawCard($num);
+        }
+
+        $data = [
+            "hand" => $hand->showCards(),
+            "numOfCards" => $deck->getNumOfCards()
+        ];
+
+        return $this->render('card/draw.html.twig', $data);
     }
 }
