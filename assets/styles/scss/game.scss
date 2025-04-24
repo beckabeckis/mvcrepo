@@ -1,0 +1,92 @@
+.game {
+  display: grid;
+  grid-template-columns: [first] 50% [second] 50% [end];
+  grid-template-rows: [row-start] 24rem [row2-start] 10rem [row-end];
+}
+
+.player {
+  grid-column: first / second;
+  grid-row: row-start / row2-start;
+  display: grid;
+  grid-template-columns: [first] 40% [second] 60% [end];
+  grid-template-rows: [row-start] 5rem [row2-start] 15rem [row3-start] 3rem [row-end];
+  border: 1px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+.bank {
+  grid-column: second / end;
+  grid-row: row-start / row2-start;
+  display: grid;
+  grid-template-columns: [first] 60% [second] 40% [end];
+  grid-template-rows: [row-start] 5rem [row2-start] 15rem [row3-start] 3rem [row-end];
+  border: 1px solid black;
+  margin: 0.2rem;
+  padding: 0.2rem;
+}
+
+.player_title {
+  grid-column: first / end;
+  grid-row: row-start / row2-start;
+  text-align: center;
+}
+
+.player_img {
+  grid-column: first / second;
+  grid-row: row2-start / row-end;
+  width: 100%;
+}
+
+.player_cards {
+  grid-column: second / end;
+  grid-row: row2-start / row3-start;
+}
+
+.player_points {
+  grid-column: second / end;
+  grid-row: row3-start / row-end;
+}
+
+.bank_title {
+  grid-column: first / end;
+  grid-row: row-start / row2-start;
+  text-align: center;
+}
+
+.bank_img {
+  grid-column: second / end;
+  grid-row: row2-start / row-end;
+  width: 100%;
+  transform: rotateY(3.142rad);
+}
+
+.bank_cards {
+  grid-column: first / second;
+  grid-row: row2-start / row3-start;
+}
+
+.bank_points {
+  grid-column: first / second;
+  grid-row: row3-start / row-end;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.shown {
+  visibility: visible;
+}
+
+.buttondiv {
+  grid-column: first / second;
+  grid-row: row2-start / row-end;
+  padding: 10px;
+}
+
+.flashdiv {
+  grid-column: second / end;
+  grid-row: row2-start / row-end;
+  padding: 10px;
+}

@@ -5,6 +5,8 @@ namespace App\Controller;
 use App\Card\Card;
 use App\Card\CardHand;
 use App\Card\DeckOfCards;
+use App\Card\PlayerCardHand;
+use App\Card\BankCardHand;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -93,7 +95,7 @@ class AppControllerJsonCard
     }
 
     #[Route("/api/deck/draw/{num<\d+>}", name: "api_draw_more")]
-    public function jsonDraw_more(
+    public function jsonDrawMore(
         int $num,
         SessionInterface $session
     ): Response {
@@ -110,11 +112,12 @@ class AppControllerJsonCard
 
         $numOfCards = $deck->getNumOfCards();
 
+        $drawCards = $num;
         if ($numOfCards == 0 || $numOfCards < $num) {
-            $hand->drawCard($numOfCards);
-        } else {
-            $hand->drawCard($num);
+            $drawCards = $numOfCards;
         }
+
+        $hand->drawCard($drawCards);
 
         $data = [
             "hand" => $hand->showCards(),
@@ -127,4 +130,33 @@ class AppControllerJsonCard
         );
         return $response;
     }
+
+    #[Route("/api/game", name: "api_game")]
+    public function jsonGame(
+        SessionInterface $session
+    ): Response {
+        if (!$session->get("deck_of_cards_game")) {
+            $deck = new DeckOfCards();
+            $playerHand = new PlayerCardHand($deck);
+            $bankHand = new BankCardHand($deck);
+
+            $session->set("deck_of_cards_game", $deck);
+            $session->set("player_card_hand", $playerHand);
+            $session->set("bank_card_hand", $bankHand);
+        }
+
+        $playerHand = $session->get("player_card_hand");
+        $bankHand = $session->get("bank_card_hand");
+        $data = [
+            'player_points' => $playerHand->getTotalPoints(),
+            'bank_points' => $bankHand->getTotalPoints()
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
 }

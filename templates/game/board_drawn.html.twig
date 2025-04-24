@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block body %}
+<div class="game">
+    <div class="player">
+        <h2 class="player_title">Player</h2>
+        <img src="{{ asset('img/player.svg') }}" alt="Player" class="player_img">
+        <div class="player_cards">
+        {% for card in player_hand %}
+            <p class="card">{{ card }}</p>
+        {% endfor %}
+        </div>
+        <p class="player_points">
+            Poäng: {{player_points}}
+        </p>
+    </div>
+    <div class="bank">
+        <h2 class="bank_title">Bank</h2>
+        <img src="{{ asset('img/bank.svg') }}" alt="Bank" class="bank_img">
+        <div class="bank_cards">
+            {% for card in bank_hand %}
+                <p class="card">{{ card }}</p>
+            {% endfor %}
+        </div>
+
+        <p class="bank_points">
+            Poäng: 
+            {{bank_points}}
+        </p>
+    </div>
+    <div class="buttondiv">
+        <a href="{{ path('game') }}" class="button {{ agianHidden }}">Spela igen</a>
+        <a href="{{ path('board_drawn') }}" class="button {{ drawHidden }}">Dra kort</a>
+        <a href="{{ path('board_end') }}" class="button {{ stopHidden }}">Avsluta runda</a>
+
+        <form method="post" class="{{ essHidden }}" action="">
+            <input type="submit" name="one" value=1 class="button"
+                onClick="this.form.action='{{ path('board_one') }}';"
+            >
+            <input type="submit" name="thirteen" value=13 class="button"
+                onClick="this.form.action='{{ path('board_thirteen') }}';"
+            >
+        </form>
+    </div>
+    <div class="flashdiv">
+        {{ include('flash.html.twig') }}
+    </div>
+</div>
+
+{% endblock %}
+

@@ -7,7 +7,7 @@ use App\Card\CardGraphic;
 class DeckOfCards
 {
     /**
-     * @var array $deck  Array with all the cards in a deck.
+     * @var array<CardGraphic> $deck  Array with all the cards in a deck.
      */
     private $deck = [];
 
@@ -76,13 +76,15 @@ class DeckOfCards
     /**
      * Method to return the deck in order.
      *
-     * @return array the deck in order.
+     * @return array<string> the deck in order.
      */
     public function getDeckInOrder(): array
     {
         $cards = [];
-        for ($i = 0; $i <= (count($this->deck) - 1); $i++) {
-            $cards[$i] = $this->deck[$i]->getCard();
+        $numOfCards = (count($this->deck));
+        for ($i = 0; $i <= ($numOfCards - 1); $i++) {
+            $card = $this->deck[$i]->getCard();
+            $cards[$i] = (string)$card[0];
         }
         return $cards;
     }
@@ -90,15 +92,17 @@ class DeckOfCards
     /**
      * Method to return the deck in disorder.
      *
-     * @return array the deck in disorder.
+     * @return array<string> the deck in disorder.
      */
     public function getDeckInRandom(): array
     {
         $randomDeck = $this->deck;
         shuffle($randomDeck);
         $cards = [];
-        for ($i = 0; $i <= (count($randomDeck) - 1); $i++) {
-            $cards[$i] = $randomDeck[$i]->getCard();
+        $numOfCards = (count($randomDeck));
+        for ($i = 0; $i <= ($numOfCards - 1); $i++) {
+            $card = $randomDeck[$i]->getCard();
+            $cards[$i] = (string)$card[0];
         }
         return $cards;
     }
@@ -106,13 +110,16 @@ class DeckOfCards
     /**
      * Method to return a random card and also remove the card from the deck.
      *
-     * @return object random card from the deck.
+     * @return array<int, int|string> random card from the deck.
      */
-    public function drawRandomCard(): string
+    public function drawRandomCard(): array
     {
-        $randomValue = random_int(0, (count($this->deck) - 1));
-        $randomCard = $this->deck[$randomValue];
-        array_splice($this->deck, $randomValue, 1);
+        $randomCard = $this->deck[0];
+        if ((count($this->deck) > 1)) {
+            $randomValue = random_int(0, (count($this->deck) - 1));
+            $randomCard = $this->deck[$randomValue];
+            array_splice($this->deck, $randomValue, 1);
+        }
         return $randomCard->getCard();
     }
 

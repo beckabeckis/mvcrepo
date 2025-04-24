@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Card landingpage{% endblock %}
+
+{% block body %}
+    <h1>Kortspelet 21</h1>
+
+    <p>
+        Spelets idé är att med två eller flera kort försöka uppnå det sammanlagda värdet 21, 
+        eller komma så nära som möjligt utan att överskrida 21. Essen är värda valfritt 1 
+        eller 14, kungarna 13, damerna 12, knektarna 11. Nummerkorten har samma värden som valören.
+    </p>
+    <p>
+        Du får dra ett kort i taget till du antingen har fått över 21 poäng och förkorat spelet 
+        eller till du väljer att stoppa. Om du väljer att stoppa så spelar banken tills den fått 
+        över 21 eller väljer att stanna, om den för över 21 eller om den får mindre poäng än dig 
+        så vinner du!
+    </p>
+    <p>
+        Lycka till!
+    </p>
+
+    <a href="{{ path('board') }}" class="button">Starta spelet</a>
+
+
+{% endblock %}

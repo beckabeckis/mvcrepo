@@ -52,6 +52,7 @@ class AppControllerTwig extends AbstractController
             'deck' => 'api_deck',
             'shuffle' => 'api_shuffle',
             'draw' => 'api_draw',
+            'game' => 'api_game',
         ];
 
         $data = [

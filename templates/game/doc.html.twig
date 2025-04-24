@@ -1,0 +1,61 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home
+{% endblock %}
+
+{% block body %}
+<h1>Dokumentation</h1>
+
+<h2>Flödes shema</h2>
+<a href="{{ asset('img/twentyone.png') }}">
+	<img src="{{ asset('img/twentyone.png') }}" alt="Flodes shema">
+</a>
+
+<h2>Psuedokod</h2>
+
+<xmp>
+	Player draw card function() {
+		Draw card()
+		Add value {
+			If (card is ess) {
+				player choose if points are 1 or 13
+			}
+			Add value to total
+		}
+		If (value is more than 21) {
+			Return player lost (game over)
+		}
+	}
+	If (player choose to continue) {
+		Player draw card function()
+	} else {
+		bank draw card function()
+	}
+	bank draw card function() {
+		for (random amount of times) {
+			while (total is under 21) {
+				draw card()
+				add value of card to total
+			}
+		}
+		if (total is over 21) {
+			player wins (game won)
+		}
+	}
+	Compare who wins() {
+		if (playertotal is more than banktotal) {
+			player wins (game won)
+		} else {
+			player loses (game over)
+		}
+	}
+</xmp>
+
+<h2>Klasser</h2>
+
+<p>PlayerCardHand – en klass som ärver av CardHand klassen som kan lägga till värden av dragna kort 
+	i en totalvariabel och göra de uträkningar som behövs för playern.</p>
+<p>BankCardHand - en klass som ärver av CardHand klassen som kan lägga till värden av dragna kort i 
+	en totalvariabel och gör lite enklare och mer automatiska uträkningar.</p>
+
+{% endblock %}

@@ -11,6 +11,12 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+/**
+ * This will suppress all the PMD warnings in
+ * this class.
+ *
+ * @SuppressWarnings(PHPMD)
+ */
 class DiceGameController extends AbstractController
 {
     #[Route("/game/pig", name: "pig_start")]
@@ -63,11 +69,11 @@ class DiceGameController extends AbstractController
 
         $hand = new DiceHand();
         for ($i = 1; $i <= $num; $i++) {
+            $dice = new Dice();
             if ($i % 2 === 1) {
-                $hand->add(new DiceGraphic());
-            } else {
-                $hand->add(new Dice());
+                $dice = new DiceGraphic();
             }
+            $hand->add($dice);
         }
 
         $hand->roll();

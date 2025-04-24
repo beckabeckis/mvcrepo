@@ -7,11 +7,11 @@ use App\Card\DeckOfCards;
 class CardHand
 {
     /**
-     * @var array  $hand  Array with all the cards in the hand.
+     * @var array<string>  $hand  Array with all the cards in the hand.
      * @var object $deck  The deck.
      */
-    private $hand = [];
-    private $deck;
+    public array $hand = [];
+    public DeckOfCards $deck;
 
     /**
      * Constructor to create a CardHand.
@@ -29,12 +29,15 @@ class CardHand
     public function drawCard(int $num = 1): void
     {
         for ($i = 0; $i <= ($num - 1); $i++) {
-            $this->hand[] = $this->deck->drawRandomCard();
+            $card = $this->deck->drawRandomCard();
+            $this->hand[] = (string)$card[0];
         }
     }
 
     /**
      * Method to return all the cards in a hand.
+     *
+     * @return array<string> Array with all the cards in the hand.
      */
     public function showCards(): array
     {
@@ -43,6 +46,8 @@ class CardHand
 
     /**
      * Method to retrun the deck.
+     *
+     * @return object the object of the DeckOfCards class.
      */
     public function getDeck(): object
     {

@@ -15,7 +15,7 @@ class CardGameController extends AbstractController
 {
     #[Route("/session", name: "session")]
     public function session(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         if (!$session->get("deck_of_cards")) {
@@ -35,7 +35,7 @@ class CardGameController extends AbstractController
 
     #[Route("/session/delete", name: "sessionDelete")]
     public function sessionDelete(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         $session->set("card_hand", null);
@@ -56,7 +56,7 @@ class CardGameController extends AbstractController
 
     #[Route("/card", name: "card")]
     public function card(
-        Request $request,
+        // Request $request,
         SessionInterface $session
     ): Response {
         if (!$session->get("deck_of_cards")) {
@@ -127,12 +127,13 @@ class CardGameController extends AbstractController
 
         $numOfCards = $deck->getNumOfCards();
 
+
         if ($numOfCards == 0) {
             $this->addFlash(
                 'warning',
                 'No more cards!'
             );
-        } else {
+        } elseif (!$numOfCards == 0) {
             $hand->drawCard();
         }
 
@@ -167,13 +168,13 @@ class CardGameController extends AbstractController
                 'warning',
                 'No more cards!'
             );
-        } elseif ($numOfCards < $num) {
+        } elseif ($numOfCards <= $num) {
             $hand->drawCard($numOfCards);
             $this->addFlash(
                 'notice',
                 'You took the last off the cards!'
             );
-        } else {
+        } elseif ($numOfCards > $num) {
             $hand->drawCard($num);
         }
 
