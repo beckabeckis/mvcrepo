@@ -14,3 +14,6 @@ parameters:
         -
             identifier: function.alreadyNarrowedType
             path: ../../tests/bootstrap.php
+        -
+            identifier: arguments.count
+            path: ../../tests

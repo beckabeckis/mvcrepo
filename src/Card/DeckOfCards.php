@@ -110,13 +110,16 @@ class DeckOfCards
     /**
      * Method to return a random card and also remove the card from the deck.
      *
+     * @param int $randomValue A value if user wants a specific card (or for testing), if null it will be a random card.
      * @return array<int, int|string> random card from the deck.
      */
-    public function drawRandomCard(): array
+    public function drawRandomCard(int $randomValue = -1): array
     {
         $randomCard = $this->deck[0];
         if ((count($this->deck) > 1)) {
-            $randomValue = random_int(0, (count($this->deck) - 1));
+            if ($randomValue == -1) {
+                $randomValue = random_int(0, (count($this->deck) - 1));
+            }
             $randomCard = $this->deck[$randomValue];
             array_splice($this->deck, $randomValue, 1);
         }

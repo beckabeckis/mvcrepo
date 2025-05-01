@@ -24,6 +24,26 @@ class Card
     }
 
     /**
+     * Method to get $number.
+     *
+     * @return int number.
+     */
+    public function getNumber(): int
+    {
+        return $this->number;
+    }
+
+    /**
+     * Method to get $color.
+     *
+     * @return string color.
+     */
+    public function getColor(): string
+    {
+        return $this->color;
+    }
+
+    /**
      * Method to create and return a card from the number and color.
      *
      * @return array<int, int|string> $card the card.

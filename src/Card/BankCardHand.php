@@ -24,14 +24,12 @@ class BankCardHand extends CardHand
     /**
      * Method to draw one or more cards from the deck and add points to total.
      *
-     * @return int The number of the card.
      */
-    public function drawBankCard(): int
+    public function drawBankCard(): void
     {
         $card = $this->deck->drawRandomCard();
         $this->hand[] = (string)$card[0];
         $this->totalPoints += (int)$card[1];
-        return (int)$card[1];
     }
 
     /**
@@ -46,16 +44,18 @@ class BankCardHand extends CardHand
 
     /**
      * Method for bank to play a game.
+     *
+     * @param int $randomValue if user wants game to be play a sepcific number of times (or for testing).
      */
-    public function playGame(): void
+    public function playGame(int $randomValue = -1): void
     {
-        $randomValue = random_int(3, 10);
+        if ($randomValue == -1) {
+            $randomValue = random_int(3, 10);
+        }
 
         for ($i = 1; $i < $randomValue; $i++) {
             if ($this->totalPoints < 21) {
-                $card = $this->deck->drawRandomCard();
-                $this->hand[] = (string)$card[0];
-                $this->totalPoints += (int)$card[1];
+                $this->drawBankCard();
             }
         }
     }

@@ -43,14 +43,4 @@ class CardHand
     {
         return $this->hand;
     }
-
-    /**
-     * Method to retrun the deck.
-     *
-     * @return object the object of the DeckOfCards class.
-     */
-    public function getDeck(): object
-    {
-        return $this->deck;
-    }
 }

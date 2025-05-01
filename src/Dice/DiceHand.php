@@ -54,6 +54,20 @@ class DiceHand
     }
 
     /**
+     * Method to get all the values of the dices sumed upp.
+     *
+     * @return int Sum off all the values.
+     */
+    public function sum(): int
+    {
+        $sum = 0;
+        foreach ($this->hand as $die) {
+            $sum += $die->getValue();
+        }
+        return $sum;
+    }
+
+    /**
      * Method to get all the values of the dices as strings.
      *
      * @return array<string> array with all the values of the dices as strings.

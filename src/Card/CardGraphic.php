@@ -23,13 +23,13 @@ class CardGraphic extends Card
      */
     private function addToCard(array $cardArray): string
     {
+        $card = "";
         for ($i = 0; $i < 13; $i++) {
             if ($this->number == ($i + 1)) {
                 $card = $cardArray[$i];
-                return $card;
             }
         }
-        return "";
+        return $card;
     }
 
     /**
