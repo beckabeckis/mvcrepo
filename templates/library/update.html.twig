@@ -1,0 +1,40 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Update book
+{% endblock %}
+
+{% block body %}
+
+<h1>Uppdatera bok</h1>
+
+<form method="post" action="/library/update">
+    <lable for="title">Titel:</lable>
+    <br>
+    <input type="text" name="title" id="title" value="{{ book.getTitle|e }}"/>
+    <br>
+
+    <lable for="author">Författare:</lable>
+    <br>
+    <input type="text" name="author" id="author" value="{{ book.getAuthor|e }}"/>
+    <br>
+
+    <lable for="isbn">ISBN:</lable>
+    <br>
+    <input type="text" name="isbn" id="isbn" value="{{ book.getIsbn|e }}"/>
+    <br>
+
+    <lable for="imageLink">Bildlänk:</lable>
+    <br>
+    <input type="text" name="imageLink" id="imageLink" value="{{ book.getImgLink|e }}"/>
+    <br>
+
+    <lable for="details">Detaljer:</lable>
+    <br>
+    <textarea name="details" maxlength="500" rows="5" cols="34" id="details">{{ book.getDetails|e }}</textarea>
+
+    <input type="hidden" id="id" name="id" value={{ book.getId|e }}/>
+    <br>
+    <input type="submit" name="do_it" value="Uppdatera" class="button"/>
+</form>
+
+{% endblock %}

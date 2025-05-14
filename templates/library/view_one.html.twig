@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Veiw all books
+{% endblock %}
+
+{% block body %}
+
+{% set imgLink = book.getImgLink|e %}
+
+<div class="onebook">
+    <div class="bookImg">
+        <img src="{{ asset('img/library/' ~ imgLink ~ '') }}" alt="{{ book.getTitle|e }}">
+    </div>
+    <div class="bookTitle">
+        <h1>{{ book.getTitle|e }}</h1>
+        <p>Skriven av {{ book.getAuthor|e }}</p>
+        <p>ISBN: {{ book.getIsbn|e }}</p>
+    </div>
+    <div class="bookDetails">
+        <p>{{ book.getDetails|e }}</p>
+    </div>
+    <a class="button" href="/library/update/{{ book.Id|e }}">Uppdatera bok</a>
+</div>
+
+{% endblock %}

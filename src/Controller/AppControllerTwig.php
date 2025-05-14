@@ -48,11 +48,12 @@ class AppControllerTwig extends AbstractController
     public function api(): Response
     {
         $routes = [
-            'quotes' => 'quote',
-            'deck' => 'api_deck',
-            'shuffle' => 'api_shuffle',
-            'draw' => 'api_draw',
-            'game' => 'api_game',
+            'Quotes' => 'quote',
+            'Deck' => 'api_deck',
+            'Shuffle' => 'api_shuffle',
+            'Draw' => 'api_draw',
+            'Game' => 'api_game',
+            'Library' => 'library_show_all_api',
         ];
 
         $data = [

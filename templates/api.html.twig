@@ -5,8 +5,18 @@
 {% block body %}
     <h1>All api routes:</h1>
     <ul>
-    {% for route in routes %}
-        <li><a href="{{ path(route) }}"><p>{{ route }}</p></a></li>
+    {% for routeName,route in routes %}
+        <li>
+            <a href="{{ path(route) }}">
+                <p>{{ routeName }}</p>
+            </a>
+        </li>
+
     {% endfor %}
+        <li>
+            <a href="api/library/books/9780062899958">
+                <p>Search with ISBN 9780062899958</p>
+            </a>
+        </li>
     </ul>
 {% endblock %}

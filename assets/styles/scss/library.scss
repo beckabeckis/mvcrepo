@@ -1,0 +1,34 @@
+.bookImg, 
+.bookTitle,
+.bookDetails{
+    width: 50%;
+    float: left;
+    padding: 1em;
+}
+
+.bookImg {
+    margin-top: 2em;
+}
+
+.onebook {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    border: 3px double black;
+    border-radius: 5px;
+    padding-bottom: 1em;
+}
+
+.onebookSmall {
+    box-sizing: border-box;
+    width: 100%;
+    height: 25em;
+    border: 3px double black;
+    border-radius: 5px;
+}
+
+.bookImgSmall {
+    width: 30%;
+    float: left;
+    padding: 1em;
+}

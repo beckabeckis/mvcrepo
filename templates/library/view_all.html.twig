@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Veiw all books
+{% endblock %}
+
+{% block body %}
+<h1>Böcker</h1>
+
+{% for book in library %}
+{% set imgLink = book.getImgLink|e %}
+<div class="onebookSmall">
+    <div class="bookImgSmall">
+        <a href="/library/book/{{ book.getId|e }}">
+            <img src="{{ asset('img/library/' ~ imgLink ~ '') }}" width="200px" alt="{{ book.getTitle|e }}">
+        </a>
+    </div>
+    <div class="bookTitle">
+        <a href="/library/book/{{ book.getId|e }}">
+            <h2>{{ book.getTitle|e }}</h2>
+        </a>
+        <p>{{ book.getAuthor|e }}</p>
+    </div>
+    <div class="smallPadding">
+        <a href="/library/delete/{{ book.getId|e }}">
+            <img src="{{ asset('img/trash_icon.png') }}" alt="Delete" width="30px">
+        </a>
+    </div>
+</div>
+<hr class="smallPadding">
+{% endfor %}
+<a class="button" href="/library/create" width="100%">Lägg till ny bok</a>
+
+
+
+{% endblock %}

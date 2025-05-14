@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Create book
+{% endblock %}
+
+{% block body %}
+<h1>Lägg till ny bok</h1>
+
+<form method="post" action="">
+    <lable for="title">Titel:</lable>
+    <br>
+    <input type="text" name="title" id="title"/>
+    <br>
+
+    <lable for="author">Författare:</lable>
+    <br>
+    <input type="text" name="author" id="author"/>
+    <br>
+
+    <lable for="isbn">ISBN:</lable>
+    <br>
+    <input type="text" name="isbn" id="isbn"/>
+    <br>
+
+    <lable for="imageLink">Bildlänk:</lable>
+    <br>
+    <input type="text" name="imageLink" id="imageLink"/>
+    <br>
+
+    <lable for="details">Detaljer:</lable>
+    <br>
+    <textarea name="details" maxlength="500" rows="5" cols="34" id="details"></textarea>
+    <br>
+
+    <input type="submit" name="do_it" value="Lägg till" class="button"/>
+</form>
+
+{% endblock %}

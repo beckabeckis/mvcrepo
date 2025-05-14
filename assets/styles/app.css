@@ -416,6 +416,10 @@ body a:hover {
   margin-top: 2rem;
 }
 
+.smallPadding {
+  padding: 10px;
+}
+
 @media (max-width: 767px) {
   body {
     grid-template-columns: [first] 8% [second] auto [third] 8% [end];
@@ -443,6 +447,41 @@ body a:hover {
     font-size: 10em;
   }
 }
+.bookImg,
+.bookTitle,
+.bookDetails {
+  width: 50%;
+  float: left;
+  padding: 1em;
+}
+
+.bookImg {
+  margin-top: 2em;
+}
+
+.onebook {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  border: 3px double black;
+  border-radius: 5px;
+  padding-bottom: 1em;
+}
+
+.onebookSmall {
+  box-sizing: border-box;
+  width: 100%;
+  height: 25em;
+  border: 3px double black;
+  border-radius: 5px;
+}
+
+.bookImgSmall {
+  width: 30%;
+  float: left;
+  padding: 1em;
+}
+
 /* Typography */
 body {
   font-family: "Raleway-Regular", Tahoma, Geneva, Verdana, sans-serif;
