@@ -6,8 +6,6 @@ filter:
 
 build:
     image: default-bionic
-    environment:
-        php: 8.4.6
     nodes:
         my-tests:
             environment:
