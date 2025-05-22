@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1747925817">
-  <project timestamp="1747925817">
+<coverage generated="1747934790">
+  <project timestamp="1747934790">
     <file name="/home/rebeckacorell/dbwebb-kurser/mvc/me/report/src/Card/BankCardHand.php">
       <class name="App\Card\BankCardHand" namespace="global">
         <metrics complexity="8" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="11" coveredstatements="11" elements="16" coveredelements="16"/>
@@ -75,15 +75,15 @@
       <line num="50" type="stmt" count="22"/>
       <line num="51" type="stmt" count="13"/>
       <line num="52" type="stmt" count="13"/>
-      <line num="53" type="stmt" count="19"/>
+      <line num="53" type="stmt" count="18"/>
       <line num="54" type="stmt" count="13"/>
       <line num="55" type="stmt" count="13"/>
-      <line num="56" type="stmt" count="18"/>
-      <line num="57" type="stmt" count="12"/>
-      <line num="58" type="stmt" count="12"/>
-      <line num="59" type="stmt" count="16"/>
-      <line num="60" type="stmt" count="16"/>
-      <line num="61" type="stmt" count="16"/>
+      <line num="56" type="stmt" count="16"/>
+      <line num="57" type="stmt" count="13"/>
+      <line num="58" type="stmt" count="13"/>
+      <line num="59" type="stmt" count="15"/>
+      <line num="60" type="stmt" count="15"/>
+      <line num="61" type="stmt" count="15"/>
       <line num="63" type="stmt" count="22"/>
       <line num="64" type="stmt" count="22"/>
       <line num="66" type="stmt" count="22"/>
@@ -770,7 +770,7 @@
     </file>
     <file name="/home/rebeckacorell/dbwebb-kurser/mvc/me/report/src/Controller/TwentyOneGameController.php">
       <class name="App\Controller\TwentyOneGameController" namespace="global">
-        <metrics complexity="16" methods="9" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="113" coveredstatements="88" elements="122" coveredelements="93"/>
+        <metrics complexity="16" methods="9" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="113" coveredstatements="87" elements="122" coveredelements="92"/>
       </class>
       <line num="16" type="method" name="card" visibility="public" complexity="1" crap="1" count="1"/>
       <line num="19" type="stmt" count="1"/>
@@ -864,20 +864,20 @@
       <line num="152" type="stmt" count="1"/>
       <line num="153" type="stmt" count="1"/>
       <line num="155" type="stmt" count="1"/>
-      <line num="158" type="method" name="boardEnd" visibility="public" complexity="5" crap="5.75" count="1"/>
+      <line num="158" type="method" name="boardEnd" visibility="public" complexity="5" crap="6.03" count="1"/>
       <line num="162" type="stmt" count="1"/>
       <line num="163" type="stmt" count="1"/>
       <line num="165" type="stmt" count="1"/>
       <line num="167" type="stmt" count="1"/>
-      <line num="168" type="stmt" count="0"/>
-      <line num="169" type="stmt" count="0"/>
-      <line num="170" type="stmt" count="0"/>
-      <line num="171" type="stmt" count="0"/>
-      <line num="172" type="stmt" count="1"/>
-      <line num="173" type="stmt" count="1"/>
-      <line num="174" type="stmt" count="1"/>
-      <line num="175" type="stmt" count="1"/>
-      <line num="176" type="stmt" count="1"/>
+      <line num="168" type="stmt" count="1"/>
+      <line num="169" type="stmt" count="1"/>
+      <line num="170" type="stmt" count="1"/>
+      <line num="171" type="stmt" count="1"/>
+      <line num="172" type="stmt" count="0"/>
+      <line num="173" type="stmt" count="0"/>
+      <line num="174" type="stmt" count="0"/>
+      <line num="175" type="stmt" count="0"/>
+      <line num="176" type="stmt" count="0"/>
       <line num="177" type="stmt" count="0"/>
       <line num="178" type="stmt" count="0"/>
       <line num="179" type="stmt" count="0"/>
@@ -894,7 +894,7 @@
       <line num="192" type="stmt" count="1"/>
       <line num="193" type="stmt" count="1"/>
       <line num="195" type="stmt" count="1"/>
-      <metrics loc="198" ncloc="198" classes="1" methods="9" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="113" coveredstatements="88" elements="122" coveredelements="93"/>
+      <metrics loc="198" ncloc="198" classes="1" methods="9" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="113" coveredstatements="87" elements="122" coveredelements="92"/>
     </file>
     <file name="/home/rebeckacorell/dbwebb-kurser/mvc/me/report/src/Dice/Dice.php">
       <class name="App\Dice\Dice" namespace="global">
@@ -996,6 +996,6 @@
       <line num="16" type="stmt" count="6"/>
       <metrics loc="44" ncloc="18" classes="1" methods="1" coveredmethods="1" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="1" elements="2" coveredelements="2"/>
     </file>
-    <metrics files="20" loc="1974" ncloc="1770" classes="19" methods="95" coveredmethods="80" conditionals="0" coveredconditionals="0" statements="780" coveredstatements="638" elements="875" coveredelements="718"/>
+    <metrics files="20" loc="1974" ncloc="1770" classes="19" methods="95" coveredmethods="80" conditionals="0" coveredconditionals="0" statements="780" coveredstatements="637" elements="875" coveredelements="717"/>
   </project>
 </coverage>
