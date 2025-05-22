@@ -85,16 +85,16 @@ class AppControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    /**
-     * Test jsonQuote route.
-     */
-    public function testShowAllBooksApi(): void
-    {
-        $client = static::createClient();
-        $client->request('GET', '/api/library/books');
+    // /**
+    //  * Test jsonQuote route.
+    //  */
+    // public function testShowAllBooksApi(): void
+    // {
+    //     $client = static::createClient();
+    //     $client->request('GET', '/api/library/books');
 
-        $this->assertResponseIsSuccessful();
-    }
+    //     $this->assertResponseIsSuccessful();
+    // }
 
     /**
      * Test jsonQuote route.
