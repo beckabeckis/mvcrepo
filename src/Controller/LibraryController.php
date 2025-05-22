@@ -211,7 +211,6 @@ final class LibraryController extends AbstractController
     ): Response {
         $entityManager = $doctrine->getManager();
         $library = $libraryRepository->findAll();
-        var_dump($library);
 
         foreach ($library as $book) {
             $entityManager->remove($book);

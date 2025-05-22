@@ -15,14 +15,5 @@ parameters:
             identifier: function.alreadyNarrowedType
             path: ../../tests/bootstrap.php
         -
-            identifier: arguments.count
-            path: ../../tests
-        -
-            identifier: missingType.iterableValue
-            path: ../../src/Repository/ProductRepository.php
-        -
-            identifier: return.type
-            path: ../../src/Repository/ProductRepository.php
-        -
             identifier: property.unusedType
             path: ../../src/Entity/

@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Card;
+namespace App\Test\Card;
 
+use App\Card\PlayerCardHand;
+use App\Card\DeckOfCards;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -33,7 +35,7 @@ class PlayerCardHandTest extends TestCase
         $hand = new PlayerCardHand($stub);
         $this->assertInstanceOf("\App\Card\PlayerCardHand", $hand);
 
-        $hand->drawPlayerCard(-1);
+        $hand->drawPlayerCard();
         $res = $hand->showCards();
         $this->assertNotEmpty($res);
     }
@@ -50,7 +52,7 @@ class PlayerCardHandTest extends TestCase
         $hand = new PlayerCardHand($stub);
         $this->assertInstanceOf("\App\Card\PlayerCardHand", $hand);
 
-        $hand->drawPlayerCard(2);
+        $hand->drawPlayerCard();
         $res = $hand->getTotalPoints();
         $exp = 2;
         $this->assertEquals($exp, $res);

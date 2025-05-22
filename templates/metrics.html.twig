@@ -4,22 +4,166 @@
 {% endblock %}
 
 {% block body %}
-	<header>
-		<h1>Metrics Redovisning</h1>
-	</header>
+<header>
+    <h1>Metrics Redovisning</h1>
+</header>
 
-	<section id="introduktion">
-		<h2>Introduktion</h2>
-		<p>
-		</p>
-		<p>
-		</p>
-		<p>
-		</p>
-		<p>
-		</p>
-		<p>
-		</p>
-	</section>
-	
+<section id="introduktion">
+    <h2>Introduktion</h2>
+    <h3>- Codestyle</h3>
+    <p>
+        Codestyle innebär att ha ett läsbart och konsekvent sätt att skriva sin kod. Till exempel att ha passande
+         och beskrivande namn på klasser, metoder och värden, att vara konsekvent när det gäller indrag och stora
+         och små bokstäver. Det gör så att koden blir lättare att underhålla då det är lättare att läsa den och
+         det gör att andra enklare kan jobba med koden.
+    </p>
+
+    <h3>- Coverage</h3>
+    <p>
+        Med coverage menas hur mycket av koden som är testad av testklasserna. Ju mer kod som är testad desto lättare
+         är det att testa hela koden på en gång för att kunna hitta buggar och likande, vilket gör att koden blir lättare att underhålla.
+    </p>
+    <p>
+        Enligt scrutinizer så har jag en kodtäckning på 19% vilket inte är så bra och det blir svårare att underhålla koden.
+    </p>
+
+    <h3>- Complexity</h3>
+    <p>
+        Code complexity mäter hur komplicerad koden är till exempel hur mycket logik man har och hur nästlad den är, hur
+         många moduler och dependencies man har och hur stor kodbasen är. Att ha låg komplexitet gör att det är lättare
+         att förstå koden vilket i sin tur gör underhållningen av koden enklare, det blir lättare att debugga och det förbättrar
+         prestandan.
+    </p>
+    <p>
+        Enligt PhpMetrics så är medelvärdet av mina klassers cyclomatic complexity 3.74 och klassen med högt värde har 11.
+         De klasser med lite högre CC kan absolut förbättras men annars känns det som ett bra medelvärde. Enligt scrutinizer
+         så är komplexiteten ungefär samma fast den högsta komplexiteten av de klasser jag har skrivit är 17.
+    </p>
+
+    <h3>- Cohesion</h3>
+    <p>
+        Cohesion mäter hur starka relationerna elementen i en modul är. En hög cohesion innebär att alla element jobbar bra
+         ihop och jobbar mot ett och samma syfte. Det gör att koden blir lättare att förstå och underhålla.
+    </p>
+
+    <h3>- Coupling</h3>
+    <p>
+        Coupling mäter beroenden mellan moduler, hög coupling innebär att modulerna är starkt kopplade och om man ändrar i en
+         modul är kan det ändra en annan modul också. Man vill ha låg coupling så att modulerna är mer oberoende av varandra,
+         då blir det lättare att göra ändringar i koden utan att påverka annat och det är lättare att förstå koden vilket gör
+         den lättare att underhålla. 
+    </p>
+    <p>
+        Enligt PhpMetrics så har de flesta av mina controller klasser många kopplingar till andra klasser och 2–3 klasser har
+         lite fler kopplingar än vad som kanske är bra, till exempel har klassen DeckOfCards 5 kopplingar. När jag har gjort
+         uppgifter i klassen har jag faktiskt känt att det har varit lite komplicerat någon gång när jag skulle ändra något i
+         en klass och fick kolla många andra klasser så att det fungerade ihop.
+    </p>
+
+    <h3>- CRAP</h3>
+    <p>
+        CRAP står för ’change risk anti-patterns’ och är en uträckning av kodens cyklomatiska komplexitet och testtäckning.
+         Den använder en formel, CRAP(m) = CC(m)^2 * U(m)^3 + CC(m), där m står för själva metoden den utgår från, CC(m) står
+         för metodens cyklomatiska komplexitet och U(m) står för testtäckningen. Ju lägre CRAP koden har desto bättre är den.
+         Den är mindre komlicerad och mer testad så två bra saker som bidrar till en mer lättunderhållen och ren kod.
+    </p>
+    <p>
+        Enligt scrutinizer så har mitt repos allra flesta metoder ett CRAP 2 eller under, några med 6 eller under och 9 över 12
+         varav de två med högst värde är trettio. Trettio är nog för högt men ingen av de nio metoderna som fick över 12 har jag
+         skrivit några enhetstester på så det är nog den stora anledningen.
+    </p>
+</section>
+<section id="phpmetrics">
+	<h2>PhpMetrics</h2>
+	<p>
+        Enligt PhpMetrics så har koden 10 Violations. Det visar även att jag har 15 klasser (65.22%) som inte är testade. Det har
+         en rätt bra avarge cyklomatiska komplexitet för klasserna men det finns några klasser med lite högt värde som skulle
+         behöva ses över. Enligt diagrammet med cirklarna så finns det några klasser som skulle behöva förbättra sin complexity
+         och maintainability.
+    </p>
+
+    <a href="{{ asset('img/metrics/phpmetricoverveiw.png') }}">
+        <img src="{{ asset('img/metrics/phpmetricoverveiw.png') }}" alt="phpmetricoverveiw">
+        <figcaption>PhpMetrics översikt</figcaption>
+    </a>
+    <a href="{{ asset('img/metrics/phpmetricscomplex.png') }}">
+        <img src="{{ asset('img/metrics/phpmetricscomplex.png') }}" alt="phpmetricscomplex">
+        <figcaption>PhpMetrics komplexitet</figcaption>
+    </a>
+    <a href="{{ asset('img/metrics/phpmetricscoupling.png') }}">
+        <img src="{{ asset('img/metrics/phpmetricscoupling.png') }}" alt="phpmetricscoupling">
+        <figcaption>PhpMetrics coupling</figcaption>
+    </a>
+    <a href="{{ asset('img/metrics/phpmetricstests.png') }}">
+        <img src="{{ asset('img/metrics/phpmetricstests.png') }}" alt="phpmetricstests">
+        <figcaption>PhpMetrics tester</figcaption>
+    </a>
+
+</section>
+
+<section id="scrutinizer">
+	<h2>Scrutinizer</h2>
+	<p>
+        Enligt scrutinizer så har koden fått ett väldigt bra betyg med 10 av 10 och alla klasser har betyget A. Men det finns
+         8 issues som skulle behövas fixas och kodtäckningen är bara 19%. Några metoder har även fått ett dåligt CRAP score som
+         skulle behöva förbättras, delvis genom att förbättra kodtäckningen men även se över den cyklomatiska komplexiteten.
+    </p>
+    <a href="{{ asset('img/metrics/scrutoverview.png') }}">
+        <img src="{{ asset('img/metrics/scrutoverview.png') }}" alt="scrutoverveiw">
+        <figcaption>Scrutinizer översikt</figcaption>
+    </a>
+    <a href="{{ asset('img/metrics/scrutissues.png') }}">
+        <img src="{{ asset('img/metrics/scrutissues.png') }}" alt="scrutissues">
+        <figcaption>Scrutinizer issues</figcaption>
+    </a>
+    <a href="{{ asset('img/metrics/scrutcomplex.png') }}">
+        <img src="{{ asset('img/metrics/scrutcomplex.png') }}" alt="scrutcomplex">
+        <figcaption>Scrutinizer koplexitet</figcaption>
+    </a>
+    <a href="{{ asset('img/metrics/scruttests.png') }}">
+        <img src="{{ asset('img/metrics/scruttests.png') }}" alt="scruttests">
+        <figcaption>Scrutinizer tester</figcaption>
+    </a>
+
+    <a href="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/quality-score.png?b=main">
+        <img src="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality">
+    </a>
+    <br>
+    <a href="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/coverage.png?b=main">
+        <img src="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/coverage.png?b=main" alt="Code Coverage">
+    </a>
+    <br>
+    <a href="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/build.png?b=main">
+        <img src="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/build.png?b=main" alt="Build Status">
+    </a>
+    <br>
+    <a href="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/code-intelligence.svg?b=main">
+        <img src="https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/code-intelligence.svg?b=main" alt="Code Intelligence Status">
+    </a>
+</section>
+
+<section id="forbattringar">
+	<h2>Förbättringar</h2>
+	<h3>- Vilka förbättringar kan göras?</h3>
+	<p>
+        Jag ska skriva fler enhetstester för att öka kodtäckningen. Jag ska även fixa de issues/violations som jag kan, jag tänker att jag ska börja med att fixa de violations som PhpMetrics visar och se om det fixar de issues som scrutinizer visar. Sedan tänker jag att jag ska se över de klasser som har hög cyklomatiska komplexitet och se om jag kan göra några förändringar för att förbättra det.
+    </p>
+	<p>
+        Det känns som en bra sak att fixa issues/violations eftersom att det kan vara buggar som minskar kodkvalitet och det var en issue där det var en var_dump() kvar som kan vara en säkerhetsrisk. Att förbättra kodtäckningen med fler enhetstester kommer göra koden lättare att underhålla och att minska cyklomatiska komplexiteten kommer göra koden enklare att förstå och öka prestandan.
+    </p>
+    <h3>- Anaylys efter förbättringar</h3>
+	<p></p>
+	<p></p>
+	<p></p>
+</section>
+<section id="diskussion">
+	<h2>Diskussion</h2>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+	<p></p>
+</section>
+
+
 {% endblock %}

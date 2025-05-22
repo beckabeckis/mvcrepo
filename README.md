@@ -64,3 +64,10 @@ Project Link: [https://github.com/beckabeckis/mvcrepo](https://github.com/beckab
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/?branch=main)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/?branch=main)
+
+[![Build Status](https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/build.png?b=main)](https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/build-status/main)
+
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/beckabeckis/mvcrepo/badges/code-intelligence.svg?b=main)](https://scrutinizer-ci.com/code-intelligence)

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Card;
+namespace App\Test\Card;
 
+use App\Card\Card;
 use PHPUnit\Framework\TestCase;
 
 /**
