@@ -2,6 +2,7 @@
 
 namespace App\Test\Controller;
 
+use App\Entity\Library;
 use App\Controller\TwentyOneGameController;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 

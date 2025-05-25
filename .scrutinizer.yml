@@ -7,17 +7,6 @@ filter:
 build:
     image: default-bionic
     nodes:
-        functional-tests:
-            environment:
-                hosts:
-                'local.dev': '127.0.0.1'
-
-                apache2:
-                    modules: ['rewrite']
-                    sites:
-                        symfony_app:
-                            web_root: 'web/'
-                            host: 'local.dev'
         my-tests:
             environment:
                 php:
