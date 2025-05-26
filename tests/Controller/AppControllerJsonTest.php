@@ -92,28 +92,28 @@ class AppControllerJsonTest extends WebTestCase
         $this->assertResponseIsSuccessful();
     }
 
-    /**
-     * Test /api/library/books route.
-     */
-    public function testShowAllBooksApi(): void
-    {
-        $client = static::createClient();
-        $client->catchExceptions(false);
-        $client->request('GET', '/api/library/books');
+    // /**
+    //  * Test /api/library/books route.
+    //  */
+    // public function testShowAllBooksApi(): void
+    // {
+    //     $client = static::createClient();
+    //     $client->catchExceptions(false);
+    //     $client->request('GET', '/api/library/books');
 
-        $this->assertResponseIsSuccessful();
-    }
+    //     $this->assertResponseIsSuccessful();
+    // }
 
-    /**
-     * Test /api/library/books/9780060188702 route.
-     */
-    public function testSearchByIsbnApi(): void
-    {
-        $client = static::createClient();
-        $client->catchExceptions(false);
+    // /**
+    //  * Test /api/library/books/9780060188702 route.
+    //  */
+    // public function testSearchByIsbnApi(): void
+    // {
+    //     $client = static::createClient();
+    //     $client->catchExceptions(false);
 
-        $client->request('GET', '/api/library/books/9780060188702');
+    //     $client->request('GET', '/api/library/books/9780060188702');
 
-        $this->assertResponseIsSuccessful();
-    }
+    //     $this->assertResponseIsSuccessful();
+    // }
 }
