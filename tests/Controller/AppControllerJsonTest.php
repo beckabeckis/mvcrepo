@@ -7,7 +7,7 @@ use App\Controller\AppControllerJsonCard;
 use App\Controller\AppControllerJsonLibrary;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class AppControllerJsonTest extends WebTestCase 
+class AppControllerJsonTest extends WebTestCase
 {
     /**
      * Test jsonQuote route.

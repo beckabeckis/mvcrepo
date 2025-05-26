@@ -106,10 +106,20 @@ Search.appendIndex(
             "summary": "Method\u0020to\u0020draw\u0020one\u0020or\u0020more\u0020cards\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Card-CardHand.html#method_drawCard"
         },                {
-            "fqsen": "\\App\\Card\\CardHand\u003A\u003AshowCards\u0028\u0029",
-            "name": "showCards",
+            "fqsen": "\\App\\Card\\CardHand\u003A\u003AshowHand\u0028\u0029",
+            "name": "showHand",
             "summary": "Method\u0020to\u0020return\u0020all\u0020the\u0020cards\u0020in\u0020a\u0020hand.",
-            "url": "classes/App-Card-CardHand.html#method_showCards"
+            "url": "classes/App-Card-CardHand.html#method_showHand"
+        },                {
+            "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetDeck\u0028\u0029",
+            "name": "getDeck",
+            "summary": "Method\u0020to\u0020return\u0020the\u0020deck.",
+            "url": "classes/App-Card-CardHand.html#method_getDeck"
+        },                {
+            "fqsen": "\\App\\Card\\CardHand\u003A\u003AgetDecksNumOfCards\u0028\u0029",
+            "name": "getDecksNumOfCards",
+            "summary": "Method\u0020to\u0020return\u0020number\u0020of\u0020cards\u0020in\u0020the\u0020deck.",
+            "url": "classes/App-Card-CardHand.html#method_getDecksNumOfCards"
         },                {
             "fqsen": "\\App\\Card\\CardHand\u003A\u003A\u0024hand",
             "name": "hand",
@@ -266,6 +276,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-AppControllerTwig.html#method_api"
         },                {
+            "fqsen": "\\App\\Controller\\AppControllerTwig\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
+            "summary": "",
+            "url": "classes/App-Controller-AppControllerTwig.html#method_metrics"
+        },                {
             "fqsen": "\\App\\Controller\\CardGameController",
             "name": "CardGameController",
             "summary": "",
@@ -406,56 +421,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_libraryReset"
         },                {
-            "fqsen": "\\App\\Controller\\ProductController",
-            "name": "ProductController",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003Aindex\u0028\u0029",
-            "name": "index",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_index"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AcreateProduct\u0028\u0029",
-            "name": "createProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_createProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowAllProduct\u0028\u0029",
-            "name": "showAllProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showAllProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowProductById\u0028\u0029",
-            "name": "showProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AdeleteProductById\u0028\u0029",
-            "name": "deleteProductById",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_deleteProductById"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AupdateProduct\u0028\u0029",
-            "name": "updateProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_updateProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AviewAllProduct\u0028\u0029",
-            "name": "viewAllProduct",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_viewAllProduct"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AviewProductWithMinimumValue\u0028\u0029",
-            "name": "viewProductWithMinimumValue",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_viewProductWithMinimumValue"
-        },                {
-            "fqsen": "\\App\\Controller\\ProductController\u003A\u003AshowProductByMinimumValue\u0028\u0029",
-            "name": "showProductByMinimumValue",
-            "summary": "",
-            "url": "classes/App-Controller-ProductController.html#method_showProductByMinimumValue"
-        },                {
             "fqsen": "\\App\\Controller\\TwentyOneGameController",
             "name": "TwentyOneGameController",
             "summary": "",
@@ -566,6 +531,11 @@ Search.appendIndex(
             "summary": "Method\u0020to\u0020add\u0020a\u0020Dice\u0020class\u0020to\u0020the\u0020hand.",
             "url": "classes/App-Dice-DiceHand.html#method_add"
         },                {
+            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AaddDicesMixed\u0028\u0029",
+            "name": "addDicesMixed",
+            "summary": "Method\u0020to\u0020add\u0020several\u0020Dice\u0020classes\u0020to\u0020the\u0020hand,\u0020mixed\u0020dices.",
+            "url": "classes/App-Dice-DiceHand.html#method_addDicesMixed"
+        },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Aroll\u0028\u0029",
             "name": "roll",
             "summary": "Method\u0020to\u0020roll\u0020the\u0020Dice.",
@@ -590,6 +560,11 @@ Search.appendIndex(
             "name": "getString",
             "summary": "Method\u0020to\u0020get\u0020all\u0020the\u0020values\u0020of\u0020the\u0020dices\u0020as\u0020strings.",
             "url": "classes/App-Dice-DiceHand.html#method_getString"
+        },                {
+            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AcalPoints\u0028\u0029",
+            "name": "calPoints",
+            "summary": "Method\u0020to\u0020calculate\u0020total\u0020points\u0020and\u0020send\u0020back\u0020\u002D1\u0020if\u0020there\u0020is\u0020a\u0020value\u0020that\u0020is\u00201.",
+            "url": "classes/App-Dice-DiceHand.html#method_calPoints"
         },                {
             "fqsen": "\\App\\Dice\\DiceHand\u003A\u003A\u0024hand",
             "name": "hand",
@@ -686,51 +661,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Entity-Library.html#property_details"
         },                {
-            "fqsen": "\\App\\Entity\\Product",
-            "name": "Product",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getId"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetName\u0028\u0029",
-            "name": "setName",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setName"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AgetValue\u0028\u0029",
-            "name": "getValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_getValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003AsetValue\u0028\u0029",
-            "name": "setValue",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#method_setValue"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_id"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_name"
-        },                {
-            "fqsen": "\\App\\Entity\\Product\u003A\u003A\u0024value",
-            "name": "value",
-            "summary": "",
-            "url": "classes/App-Entity-Product.html#property_value"
-        },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
             "summary": "",
@@ -745,26 +675,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Repository-LibraryRepository.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository",
-            "name": "ProductRepository",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "",
-            "url": "classes/App-Repository-ProductRepository.html#method___construct"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003AfindByMinimumValue\u0028\u0029",
-            "name": "findByMinimumValue",
-            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one.",
-            "url": "classes/App-Repository-ProductRepository.html#method_findByMinimumValue"
-        },                {
-            "fqsen": "\\App\\Repository\\ProductRepository\u003A\u003AfindByMinimumValue2\u0028\u0029",
-            "name": "findByMinimumValue2",
-            "summary": "Find\u0020all\u0020producs\u0020having\u0020a\u0020value\u0020above\u0020the\u0020specified\u0020one\u0020with\u0020SQL.",
-            "url": "classes/App-Repository-ProductRepository.html#method_findByMinimumValue2"
         },                {
             "fqsen": "\\",
             "name": "\\",

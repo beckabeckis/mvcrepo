@@ -28,7 +28,7 @@ class CardHandTest extends TestCase
      */
     public function testDrawCard(): void
     {
-        $hand = new CardHand(new DeckOfCards);
+        $hand = new CardHand(new DeckOfCards());
         $this->assertInstanceOf("\App\Card\CardHand", $hand);
 
         $hand->drawCard(2);

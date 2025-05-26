@@ -97,7 +97,7 @@ class DiceHand
         }
         return $values;
     }
-    
+
     /**
      * Method to calculate total points and send back -1 if there is a value that is 1.
      *

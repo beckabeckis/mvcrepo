@@ -146,23 +146,49 @@
 	<h2>Förbättringar</h2>
 	<h3>- Vilka förbättringar kan göras?</h3>
 	<p>
-        Jag ska skriva fler enhetstester för att öka kodtäckningen. Jag ska även fixa de issues/violations som jag kan, jag tänker att jag ska börja med att fixa de violations som PhpMetrics visar och se om det fixar de issues som scrutinizer visar. Sedan tänker jag att jag ska se över de klasser som har hög cyklomatiska komplexitet och se om jag kan göra några förändringar för att förbättra det.
+        Jag ska skriva fler enhetstester för att öka kodtäckningen. Jag ska även fixa de issues/violations som jag kan, 
+        jag tänker att jag ska börja med att fixa de violations som PhpMetrics visar och se om det fixar de issues som 
+        scrutinizer visar. Sedan tänker jag att jag ska se över de klasser som har hög cyklomatiska komplexitet och se 
+        om jag kan göra några förändringar för att förbättra det.
     </p>
 	<p>
-        Det känns som en bra sak att fixa issues/violations eftersom att det kan vara buggar som minskar kodkvalitet och det var en issue där det var en var_dump() kvar som kan vara en säkerhetsrisk. Att förbättra kodtäckningen med fler enhetstester kommer göra koden lättare att underhålla och att minska cyklomatiska komplexiteten kommer göra koden enklare att förstå och öka prestandan.
+        Det känns som en bra sak att fixa issues/violations eftersom att det kan vara buggar som minskar kodkvalitet och 
+        det var en issue där det var en var_dump() kvar som kan vara en säkerhetsrisk. Att förbättra kodtäckningen med 
+        fler enhetstester kommer göra koden lättare att underhålla och att minska cyklomatiska komplexiteten kommer göra 
+        koden enklare att förstå och öka prestandan.
     </p>
     <h3>- Anaylys efter förbättringar</h3>
-	<p></p>
-	<p></p>
-	<p></p>
+    <a href="{{ asset('img/metrics/improvedissues.png') }}">
+        <img src="{{ asset('img/metrics/improvedissues.png') }}" alt="improvedissues">
+        <figcaption>Förbättade issues</figcaption>
+    </a>
+	<p>Jag har löst alla issues som jag kände att jag förstod och kunde fixa. Det är fortfarande några kvar som är från filer som 
+    är automatiserade från Kernel och php-cs-fixer som jag måste lära mig mer om för att kunna fixa de problemen.</p>
+    <a href="{{ asset('img/metrics/improvedcoverage.png') }}">
+        <img src="{{ asset('img/metrics/improvedcoverage.png') }}" alt="improvedcoverage">
+        <figcaption>Förbättad kodtäckning</figcaption>
+    </a>
+	<p> Jag har skrivit fler tester och har förbättrat kodtäcknignen. Det var 19% och nu är det 41.7% och har alltså ökat med 29%.</p>
+    <a href="{{ asset('img/metrics/improvedcomplexity.png') }}">
+        <img src="{{ asset('img/metrics/improvedcomplexity.png') }}" alt="improvedcomplexity">
+        <figcaption>Förbättad komplexitet</figcaption>
+    </a>
+    <p>Jag har skrivit om klasserna till dice och card och lagt till metoder som tar hand om logik som jag innan hade i controllerklasserna 
+    vilket har minskat komplexiteten i de kontrollerklasserna.</p>
+    <a href="{{ asset('img/metrics/improvedcrap.png') }}">
+        <img src="{{ asset('img/metrics/improvedcrap.png') }}" alt="improvedcrap">
+        <figcaption>Förbättad CRAP score</figcaption>
+    </a>
+    <p>Med den förbättrade kodtäckningen och komplexiteten så har även CRAP scoren minskat något.</p>
 </section>
 <section id="diskussion">
 	<h2>Diskussion</h2>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
-	<p></p>
+	<p>Att jobba med verktyg som PhpMetrics och Scrutinizer så kan man få en mycket tydlig bild över hur kodkvaliteten ser ut och det är 
+    lättare att se var man kan göra förbättringar. Om mna använder dem rätt så kan de användas för att få en mer clean code. Dock är det 
+    viktigt att inte lita blint på bara siffror utan man måste även själv se till att koden fungerar bra och är fin. Man kan tillexempel 
+    få till en hög kodtekning utan att ha en bra kodtäckning och verkligen testa det som behöver testas.</p>
+	<p>Man kan få en mer clean code genom att jobba med linters och verktyg som mäter olika värden för att få en bra fingervisning och 
+    hitta problem. Man även verkligen lära sig vad en clean code är och hur man skriver det för att aktivt jobba mot det när man skriver kod.</p>
 </section>
 
 

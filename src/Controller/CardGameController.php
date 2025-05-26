@@ -115,7 +115,7 @@ class CardGameController extends AbstractController
 
         $drawCardOk = $hand->drawCard();
 
-        if ($drawCardOk[0] !== "ok"){
+        if ($drawCardOk[0] !== "ok") {
             $this->addFlash(
                 $drawCardOk[0],
                 $drawCardOk[1]
@@ -147,7 +147,7 @@ class CardGameController extends AbstractController
 
         $drawCardOk = $hand->drawCard($num);
 
-        if ($drawCardOk[0] !== "ok"){
+        if ($drawCardOk[0] !== "ok") {
             $this->addFlash(
                 $drawCardOk[0],
                 $drawCardOk[1]
