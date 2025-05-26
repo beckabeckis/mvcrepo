@@ -73,8 +73,6 @@ class AppControllerJsonCard
         }
 
         $hand = $session->get("card_hand");
-
-        $hand = $session->get("card_hand");
         $numOfCards = $hand->getDecksNumOfCards();
 
         if ($numOfCards != 0) {
