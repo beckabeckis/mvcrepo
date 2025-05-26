@@ -17,15 +17,13 @@ class CardGameController extends AbstractController
     public function session(
         SessionInterface $session
     ): Response {
-        if (!$session->get("deck_of_cards")) {
+        if (!$session->get("card_hand")) {
             $deck = new DeckOfCards();
             $hand = new CardHand($deck);
 
-            $session->set("deck_of_cards", $deck);
             $session->set("card_hand", $hand);
         }
         $data = [
-            "deckOfCards" => $session->get("deck_of_cards"),
             "cardHand" => $session->get("card_hand"),
         ];
 
@@ -37,7 +35,6 @@ class CardGameController extends AbstractController
         SessionInterface $session
     ): Response {
         $session->set("card_hand", null);
-        $session->set("deck_of_cards", null);
 
         $this->addFlash(
             'notice',
@@ -46,7 +43,6 @@ class CardGameController extends AbstractController
 
         $data = [
             "cardHand" => $session->get("card_hand"),
-            "deckOfCards" => $session->get("deck_of_cards"),
         ];
 
         return $this->render('session_delete.html.twig', $data);
@@ -56,11 +52,10 @@ class CardGameController extends AbstractController
     public function card(
         SessionInterface $session
     ): Response {
-        if (!$session->get("deck_of_cards")) {
+        if (!$session->get("card_hand")) {
             $deck = new DeckOfCards();
             $hand = new CardHand($deck);
 
-            $session->set("deck_of_cards", $deck);
             $session->set("card_hand", $hand);
         }
 
@@ -71,15 +66,15 @@ class CardGameController extends AbstractController
     public function deck(
         SessionInterface $session
     ): Response {
-        if (!$session->get("deck_of_cards")) {
+        if (!$session->get("card_hand")) {
             $deck = new DeckOfCards();
             $hand = new CardHand($deck);
 
-            $session->set("deck_of_cards", $deck);
             $session->set("card_hand", $hand);
         }
 
-        $deck = $session->get("deck_of_cards");
+        $hand = $session->get("card_hand");
+        $deck = $hand->getDeck();
         $data = [
             "deck" => $deck->getDeckInOrder()
         ];
@@ -94,13 +89,13 @@ class CardGameController extends AbstractController
         $deck = new DeckOfCards();
         $hand = new CardHand($deck);
 
-        $session->set("deck_of_cards", $deck);
         $session->set("card_hand", $hand);
 
-        $deck = $session->get("deck_of_cards");
+        $hand = $session->get("card_hand");
+        $deck = $hand->getDeck();
         $data = [
             "deck" => $deck->getDeckInRandom(),
-            "numOfCards" => $deck->getNumOfCards()
+            "numOfCards" => $hand->getDecksNumOfCards()
         ];
         return $this->render('card/shuffle.html.twig', $data);
     }
@@ -113,28 +108,23 @@ class CardGameController extends AbstractController
             $deck = new DeckOfCards();
             $hand = new CardHand($deck);
 
-            $session->set("deck_of_cards", $deck);
             $session->set("card_hand", $hand);
         }
 
         $hand = $session->get("card_hand");
-        $deck = $session->get("deck_of_cards");
 
-        $numOfCards = $deck->getNumOfCards();
+        $drawCardOk = $hand->drawCard();
 
-
-        if ($numOfCards == 0) {
+        if ($drawCardOk[0] !== "ok"){
             $this->addFlash(
-                'warning',
-                'No more cards!'
+                $drawCardOk[0],
+                $drawCardOk[1]
             );
-        } elseif (!$numOfCards == 0) {
-            $hand->drawCard();
         }
 
         $data = [
-            "hand" => $hand->showCards(),
-            "numOfCards" => $deck->getNumOfCards()
+            "hand" => $hand->showHand(),
+            "numOfCards" => $hand->getDecksNumOfCards()
         ];
 
         return $this->render('card/draw.html.twig', $data);
@@ -154,28 +144,20 @@ class CardGameController extends AbstractController
         }
 
         $hand = $session->get("card_hand");
-        $deck = $session->get("deck_of_cards");
 
-        $numOfCards = $deck->getNumOfCards();
+        $drawCardOk = $hand->drawCard($num);
 
-        if ($numOfCards == 0) {
+        if ($drawCardOk[0] !== "ok"){
             $this->addFlash(
-                'warning',
-                'No more cards!'
+                $drawCardOk[0],
+                $drawCardOk[1]
             );
-        } elseif ($numOfCards <= $num) {
-            $hand->drawCard($numOfCards);
-            $this->addFlash(
-                'notice',
-                'You took the last off the cards!'
-            );
-        } elseif ($numOfCards > $num) {
-            $hand->drawCard($num);
         }
 
+
         $data = [
-            "hand" => $hand->showCards(),
-            "numOfCards" => $deck->getNumOfCards()
+            "hand" => $hand->showHand(),
+            "numOfCards" => $hand->getDecksNumOfCards()
         ];
 
         return $this->render('card/draw.html.twig', $data);

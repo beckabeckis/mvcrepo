@@ -55,9 +55,9 @@ class TwentyOneGameController extends AbstractController
         $bankHand = $session->get("bank_card_hand");
         $isEss = $playerHand->drawPlayerCard();
         $data = [
-                'player_hand' => $playerHand->showCards(),
+                'player_hand' => $playerHand->showHand(),
                 'player_points' => $playerHand->getTotalPoints(),
-                'bank_hand' => $bankHand->showCards(),
+                'bank_hand' => $bankHand->showHand(),
                 'bank_points' => $bankHand->getTotalPoints(),
                 'essHidden' => "shown",
                 'drawHidden' => "hidden",
@@ -81,9 +81,9 @@ class TwentyOneGameController extends AbstractController
             }
 
             $data = [
-                'player_hand' => $playerHand->showCards(),
+                'player_hand' => $playerHand->showHand(),
                 'player_points' => $playerHand->getTotalPoints(),
-                'bank_hand' => $bankHand->showCards(),
+                'bank_hand' => $bankHand->showHand(),
                 'bank_points' => $bankHand->getTotalPoints(),
                 'essHidden' => "hidden",
                 'drawHidden' => "shown",
@@ -122,9 +122,9 @@ class TwentyOneGameController extends AbstractController
         $playerHand = $session->get("player_card_hand");
         $bankHand = $session->get("bank_card_hand");
         $data = [
-            'player_hand' => $playerHand->showCards(),
+            'player_hand' => $playerHand->showHand(),
             'player_points' => $playerHand->getTotalPoints(),
-            'bank_hand' => $bankHand->showCards(),
+            'bank_hand' => $bankHand->showHand(),
             'bank_points' => $bankHand->getTotalPoints(),
             'essHidden' => "hidden",
             'drawHidden' => "shown",
@@ -142,9 +142,9 @@ class TwentyOneGameController extends AbstractController
         $playerHand = $session->get("player_card_hand");
         $bankHand = $session->get("bank_card_hand");
         $data = [
-            'player_hand' => $playerHand->showCards(),
+            'player_hand' => $playerHand->showHand(),
             'player_points' => $playerHand->getTotalPoints(),
-            'bank_hand' => $bankHand->showCards(),
+            'bank_hand' => $bankHand->showHand(),
             'bank_points' => $bankHand->getTotalPoints(),
             'essHidden' => "hidden",
             'drawHidden' => "hidden",
@@ -182,9 +182,9 @@ class TwentyOneGameController extends AbstractController
         }
 
         $data = [
-            'player_hand' => $playerHand->showCards(),
+            'player_hand' => $playerHand->showHand(),
             'player_points' => $playerHand->getTotalPoints(),
-            'bank_hand' => $bankHand->showCards(),
+            'bank_hand' => $bankHand->showHand(),
             'bank_points' => $bankHand->getTotalPoints(),
             'essHidden' => "hidden",
             'drawHidden' => "hidden",

@@ -3,6 +3,7 @@
 namespace App\Dice;
 
 use App\Dice\Dice;
+use App\Dice\DiceGraphic;
 
 class DiceHand
 {
@@ -17,6 +18,22 @@ class DiceHand
     public function add(Dice $die): void
     {
         $this->hand[] = $die;
+    }
+
+    /**
+     * Method to add several Dice classes to the hand, mixed dices.
+     *
+     * @param int $num num of dices.
+     */
+    public function addDicesMixed(int $num): void
+    {
+        for ($i = 1; $i <= $num; $i++) {
+            $dice = new Dice();
+            if ($i % 2 === 1) {
+                $dice = new DiceGraphic();
+            }
+            $this->add($dice);
+        }
     }
 
     /**
@@ -79,5 +96,26 @@ class DiceHand
             $values[] = $die->getAsString();
         }
         return $values;
+    }
+    
+    /**
+     * Method to calculate total points and send back -1 if there is a value that is 1.
+     *
+     * @return int total points.
+     */
+    public function calPoints(): int
+    {
+        $points = 0;
+
+        $valuesFun = $this->getValues();
+        foreach ($valuesFun as $value) {
+            if ($value === 1) {
+                $points = -1;
+                break;
+            }
+            $points += $value;
+        }
+
+        return $points;
     }
 }

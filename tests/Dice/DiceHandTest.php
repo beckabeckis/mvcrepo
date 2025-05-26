@@ -51,6 +51,17 @@ class DiceHandTest extends TestCase
     }
 
     /**
+     * Test addDicesMixed method working.
+     */
+    public function testAddDicesMixed(): void
+    {
+        $dicehand = new DiceHand();
+        $dicehand->addDicesMixed(5);
+        $res = $dicehand->getNumberDices();
+        $this->assertEquals(5, $res);
+    }
+
+    /**
      * Stub the dices to assure the value can be asserted and test getNumberDices method working.
      */
     public function testGetValues(): void
@@ -75,5 +86,8 @@ class DiceHandTest extends TestCase
         $this->assertEquals([6, 6, 6, 6], $res);
         $res = $dicehand->getString();
         $this->assertEquals(["6", "6", "6", "6"], $res);
+
+        $res = $dicehand->calPoints();
+        $this->assertEquals(24, $res);
     }
 }

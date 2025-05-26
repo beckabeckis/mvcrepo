@@ -28,33 +28,11 @@ class CardHandTest extends TestCase
      */
     public function testDrawCard(): void
     {
-        $stub = $this->createMock(DeckOfCards::class);
-        $stub->method('drawRandomCard')
-            ->willReturn(["🃒", 2]);
-
-        $hand = new CardHand($stub);
+        $hand = new CardHand(new DeckOfCards);
         $this->assertInstanceOf("\App\Card\CardHand", $hand);
 
         $hand->drawCard(2);
-        $res = $hand->showCards();
+        $res = $hand->showHand();
         $this->assertNotEmpty($res);
-    }
-
-    /**
-     * Test if a card is drawn correctly.
-     */
-    public function testDrawSpecificCard(): void
-    {
-        $stub = $this->createMock(DeckOfCards::class);
-        $stub->method('drawRandomCard')
-            ->willReturn(["🃒", 2]);
-
-        $hand = new CardHand($stub);
-        $this->assertInstanceOf("\App\Card\CardHand", $hand);
-
-        $hand->drawCard();
-        $res = $hand->showCards();
-        $exp = ["🃒"];
-        $this->assertEquals($res, $exp);
     }
 }

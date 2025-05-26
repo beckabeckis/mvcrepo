@@ -19,15 +19,15 @@ class AppControllerJsonCard
     public function jsonDeck(
         SessionInterface $session
     ): Response {
-        if (!$session->get("deck_of_cards")) {
+        if (!$session->get("card_hand")) {
             $deckofCards = new DeckOfCards();
             $cardHand = new CardHand($deckofCards);
 
-            $session->set("deck_of_cards", $deckofCards);
             $session->set("card_hand", $cardHand);
         }
 
-        $deck = $session->get("deck_of_cards");
+        $hand = $session->get("card_hand");
+        $deck = $hand->getDeck();
         $data = [
             "deck" => $deck->getDeckInOrder()
         ];
@@ -46,10 +46,10 @@ class AppControllerJsonCard
         $deckofCards = new DeckOfCards();
         $cardHand = new CardHand($deckofCards);
 
-        $session->set("deck_of_cards", $deckofCards);
         $session->set("card_hand", $cardHand);
 
-        $deck = $session->get("deck_of_cards");
+        $hand = $session->get("card_hand");
+        $deck = $hand->getDeck();
         $data = [
             "deck" => $deck->getDeckInRandom()
         ];
@@ -65,26 +65,25 @@ class AppControllerJsonCard
     public function jsonDraw(
         SessionInterface $session
     ): Response {
-        if (!$session->get("deck_of_cards")) {
+        if (!$session->get("card_hand")) {
             $deckofCards = new DeckOfCards();
             $cardHand = new CardHand($deckofCards);
 
-            $session->set("deck_of_cards", $deckofCards);
             $session->set("card_hand", $cardHand);
         }
 
         $hand = $session->get("card_hand");
-        $deck = $session->get("deck_of_cards");
 
-        $numOfCards = $deck->getNumOfCards();
+        $hand = $session->get("card_hand");
+        $numOfCards = $hand->getDecksNumOfCards();
 
         if ($numOfCards != 0) {
             $hand->drawCard();
         }
 
         $data = [
-            "hand" => $hand->showCards(),
-            "numOfCards" => $deck->getNumOfCards()
+            "hand" => $hand->showHand(),
+            "numOfCards" => $hand->getDecksNumOfCards()
         ];
 
         $response = new JsonResponse($data);
@@ -99,18 +98,15 @@ class AppControllerJsonCard
         int $num,
         SessionInterface $session
     ): Response {
-        if (!$session->get("deck_of_cards")) {
+        if (!$session->get("card_hand")) {
             $deckofCards = new DeckOfCards();
             $cardHand = new CardHand($deckofCards);
 
-            $session->set("deck_of_cards", $deckofCards);
             $session->set("card_hand", $cardHand);
         }
 
         $hand = $session->get("card_hand");
-        $deck = $session->get("deck_of_cards");
-
-        $numOfCards = $deck->getNumOfCards();
+        $numOfCards = $hand->getDecksNumOfCards();
 
         $drawCards = $num;
         if ($numOfCards == 0 || $numOfCards < $num) {
@@ -120,8 +116,8 @@ class AppControllerJsonCard
         $hand->drawCard($drawCards);
 
         $data = [
-            "hand" => $hand->showCards(),
-            "numOfCards" => $deck->getNumOfCards()
+            "hand" => $hand->showHand(),
+            "numOfCards" => $hand->getDecksNumOfCards()
         ];
 
         $response = new JsonResponse($data);

@@ -68,13 +68,7 @@ class DiceGameController extends AbstractController
         }
 
         $hand = new DiceHand();
-        for ($i = 1; $i <= $num; $i++) {
-            $dice = new Dice();
-            if ($i % 2 === 1) {
-                $dice = new DiceGraphic();
-            }
-            $hand->add($dice);
-        }
+        $hand->addDicesMixed($num);
 
         $hand->roll();
 
@@ -137,19 +131,16 @@ class DiceGameController extends AbstractController
         $hand->roll();
 
         $roundTotal = $session->get("pig_round");
-        $round = 0;
-        $values = $hand->getValues();
-        foreach ($values as $value) {
-            if ($value === 1) {
-                $round = 0;
-                $roundTotal = 0;
-                $this->addFlash(
-                    'warning',
-                    'You got a 1 and you lost the round points!'
-                );
-                break;
-            }
-            $round += $value;
+
+        $round = $hand->calPoints();
+
+        if ($round == -1) {
+            $round = 0;
+            $roundTotal = 0;
+            $this->addFlash(
+                'warning',
+                'You got a 1 and you lost the round points!'
+            );
         }
 
         $session->set("pig_round", $roundTotal + $round);

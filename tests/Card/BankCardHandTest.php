@@ -36,7 +36,7 @@ class BankCardHandTest extends TestCase
         $this->assertInstanceOf("\App\Card\BankCardHand", $hand);
 
         $hand->playGame(-1);
-        $res = $hand->showCards();
+        $res = $hand->showHand();
         $this->assertNotEmpty($res);
     }
 
