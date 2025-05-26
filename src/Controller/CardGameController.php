@@ -15,7 +15,6 @@ class CardGameController extends AbstractController
 {
     #[Route("/session", name: "session")]
     public function session(
-        // Request $request,
         SessionInterface $session
     ): Response {
         if (!$session->get("deck_of_cards")) {
@@ -35,7 +34,6 @@ class CardGameController extends AbstractController
 
     #[Route("/session/delete", name: "sessionDelete")]
     public function sessionDelete(
-        // Request $request,
         SessionInterface $session
     ): Response {
         $session->set("card_hand", null);
@@ -56,7 +54,6 @@ class CardGameController extends AbstractController
 
     #[Route("/card", name: "card")]
     public function card(
-        // Request $request,
         SessionInterface $session
     ): Response {
         if (!$session->get("deck_of_cards")) {
@@ -86,8 +83,6 @@ class CardGameController extends AbstractController
         $data = [
             "deck" => $deck->getDeckInOrder()
         ];
-
-        // var_dump($data["deck"]);
 
         return $this->render('card/deck.html.twig', $data);
     }
