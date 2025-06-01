@@ -1,0 +1,38 @@
+{% extends "base-square.html.twig" %}
+
+{% block title %}Project square board result
+{% endblock %}
+
+{% block body %}
+<table class="square-table">
+	<tbody>
+    {% for row in table %}
+		<tr>
+        {% for card in row %}
+            <td>
+                <p class="square-card {{ card[1] }}">{{ card[0] }}</p>
+            </td>
+        {% endfor %}
+        </tr>
+    {% endfor %}
+	</tbody>
+</table>
+
+<div class="square-result">
+    <h3>Amerikanska poäng:</h3>
+    <h2>{{ amePoints }}</h2>
+    <p>{{ ameWin }}</p>
+
+    <br>
+
+    <h3>Engelska poäng:</h3>
+    <h2>{{ engPoints }}</h2>
+    <p>{{ engWin }}</p>
+
+    <br>
+
+    <a href="{{ path('proj_init') }}" class="square-button">Spela igen!</a>
+
+</div>
+
+{% endblock %}

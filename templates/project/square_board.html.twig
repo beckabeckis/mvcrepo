@@ -1,0 +1,448 @@
+{% extends "base-square.html.twig" %}
+
+{% block title %}Project square board
+{% endblock %}
+
+{% block body %}
+<table class="square-table">
+	<tbody>
+    <tr>
+        {% if table[0][0][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=0/>
+                <input type="hidden" name="col" id="color" value=0/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}" />
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}" />
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[0][0][1] }}">{{ table[0][0][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[0][1][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=0/>
+                <input type="hidden" name="col" id="color" value=1/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[0][1][1] }}">{{ table[0][1][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[0][2][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=0/>
+                <input type="hidden" name="col" id="color" value=2/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[0][2][1] }}">{{ table[0][2][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[0][3][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=0/>
+                <input type="hidden" name="col" id="color" value=3/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[0][3][1] }}">{{ table[0][3][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[0][4][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=0/>
+                <input type="hidden" name="col" id="color" value=4/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[0][4][1] }}">{{ table[0][4][0] }}</p>
+            </td>
+        {% endif %}
+    </tr>
+
+    <tr>
+	    {% if table[1][0][0] is null %}
+		    <td>
+			<form class="square-form" method="post" action="/proj/square_board_post">
+				<input type="hidden" name="row" id="row" value=1/>
+				<input type="hidden" name="col" id="color" value=0/>
+				<input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+				<input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+				<input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+			</td>
+		{% else %}
+			<td>
+				<p class="square-card {{ table[1][0][1] }}">{{ table[1][0][0] }}</p>
+			</td>
+		{% endif %}
+
+		{% if table[1][1][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=1/>
+                <input type="hidden" name="col" id="color" value=1/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[1][1][1] }}">{{ table[1][1][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[1][2][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=1/>
+                <input type="hidden" name="col" id="color" value=2/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[1][2][1] }}">{{ table[1][2][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[1][3][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=1/>
+                <input type="hidden" name="col" id="color" value=3/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[1][3][1] }}">{{ table[1][3][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[1][4][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=1/>
+                <input type="hidden" name="col" id="color" value=4/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[1][4][1] }}">{{ table[1][4][0] }}</p>
+            </td>
+        {% endif %}
+    </tr>
+
+    <tr>
+	    {% if table[2][0][0] is null %}
+		    <td>
+			<form class="square-form" method="post" action="/proj/square_board_post">
+				<input type="hidden" name="row" id="row" value=2/>
+				<input type="hidden" name="col" id="color" value=0/>
+				<input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+				<input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+				<input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+			</td>
+		{% else %}
+			<td>
+				<p class="square-card {{ table[2][0][1] }}">{{ table[2][0][0] }}</p>
+			</td>
+		{% endif %}
+
+		{% if table[2][1][0] is null %}
+			<td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=2/>
+                <input type="hidden" name="col" id="color" value=1/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[2][1][1] }}">{{ table[2][1][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[2][2][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=2/>
+                <input type="hidden" name="col" id="color" value=2/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[2][2][1] }}">{{ table[2][2][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[2][3][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=2/>
+                <input type="hidden" name="col" id="color" value=3/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[2][3][1] }}">{{ table[2][3][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[2][4][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=2/>
+                <input type="hidden" name="col" id="color" value=4/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[2][4][1] }}">{{ table[2][4][0] }}</p>
+            </td>
+        {% endif %}
+    </tr>
+
+    <tr>
+        {% if table[3][0][0] is null %}
+            <td>
+			<form class="square-form" method="post" action="/proj/square_board_post">
+				<input type="hidden" name="row" id="row" value=3/>
+				<input type="hidden" name="col" id="color" value=0/>
+				<input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+				<input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+				<input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+			</td>
+		{% else %}
+			<td>
+				<p class="square-card {{ table[3][0][1] }}">{{ table[3][0][0] }}</p>
+			</td>
+		{% endif %}
+
+		{% if table[3][1][0] is null %}
+			<td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=3/>
+                <input type="hidden" name="col" id="color" value=1/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[3][1][1] }}">{{ table[3][1][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[3][2][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=3/>
+                <input type="hidden" name="col" id="color" value=2/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[3][2][1] }}">{{ table[3][2][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[3][3][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=3/>
+                <input type="hidden" name="col" id="color" value=3/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[3][3][1] }}">{{ table[3][3][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[3][4][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=3/>
+                <input type="hidden" name="col" id="color" value=4/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[3][4][1] }}">{{ table[3][4][0] }}</p>
+            </td>
+        {% endif %}
+    </tr>
+
+    <tr>
+        {% if table[4][0][0] is null %}
+            <td>
+			<form class="square-form" method="post" action="/proj/square_board_post">
+				<input type="hidden" name="row" id="row" value=4/>
+				<input type="hidden" name="col" id="color" value=0/>
+				<input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+				<input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+				<input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+			</td>
+		{% else %}
+			<td>
+				<p class="square-card {{ table[4][0][1] }}">{{ table[4][0][0] }}</p>
+			</td>
+		{% endif %}
+
+		{% if table[4][1][0] is null %}
+			<td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=4/>
+                <input type="hidden" name="col" id="color" value=1/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[4][1][1] }}">{{ table[4][1][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[4][2][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=4/>
+                <input type="hidden" name="col" id="color" value=2/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[4][2][1] }}">{{ table[4][2][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[4][3][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=4/>
+                <input type="hidden" name="col" id="color" value=3/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[4][3][1] }}">{{ table[4][3][0] }}</p>
+            </td>
+        {% endif %}
+
+        {% if table[4][4][0] is null %}
+            <td>
+            <form class="square-form" method="post" action="/proj/square_board_post">
+                <input type="hidden" name="row" id="row" value=4/>
+                <input type="hidden" name="col" id="color" value=4/>
+                <input type="hidden" name="value" id="value" value="{{ randomCardArr[1] }}"/>
+                <input type="hidden" name="color" id="color" value="{{ randomCardArr[2] }}"/>
+
+                <input type="submit" value="" class="square-card-form" name="do-it">
+            </form>
+            </td>
+        {% else %}
+            <td>
+                <p class="square-card {{ table[4][4][1] }}">{{ table[4][4][0] }}</p>
+            </td>
+        {% endif %}
+    </tr>
+    </tbody>
+</table>
+
+<p class="square-card-deck {{ randomColor }}">{{ randomCardArr[0] }}</p>
+
+{% endblock %}

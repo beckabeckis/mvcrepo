@@ -156,6 +156,11 @@ Search.appendIndex(
             "summary": "Method\u0020to\u0020return\u0020a\u0020random\u0020card\u0020and\u0020also\u0020remove\u0020the\u0020card\u0020from\u0020the\u0020deck.",
             "url": "classes/App-Card-DeckOfCards.html#method_drawRandomCard"
         },                {
+            "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AdrawRandomCardCard\u0028\u0029",
+            "name": "drawRandomCardCard",
+            "summary": "Method\u0020to\u0020return\u0020a\u0020random\u0020card\u0020and\u0020also\u0020remove\u0020the\u0020card\u0020from\u0020the\u0020deck.",
+            "url": "classes/App-Card-DeckOfCards.html#method_drawRandomCardCard"
+        },                {
             "fqsen": "\\App\\Card\\DeckOfCards\u003A\u003AgetNumOfCards\u0028\u0029",
             "name": "getNumOfCards",
             "summary": "Method\u0020to\u0020returning\u0020the\u0020number\u0020of\u0020cards\u0020in\u0020the\u0020deck.",
@@ -421,6 +426,71 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_libraryReset"
         },                {
+            "fqsen": "\\App\\Controller\\ProjectController",
+            "name": "ProjectController",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AprojAbout\u0028\u0029",
+            "name": "projAbout",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_projAbout"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003Ainit\u0028\u0029",
+            "name": "init",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_init"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AsquareBoard\u0028\u0029",
+            "name": "squareBoard",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_squareBoard"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AsquareBoardPost\u0028\u0029",
+            "name": "squareBoardPost",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_squareBoardPost"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AsquareBoardFinished\u0028\u0029",
+            "name": "squareBoardFinished",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_squareBoardFinished"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonDeck\u0028\u0029",
+            "name": "jsonDeck",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_jsonDeck"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonTable\u0028\u0029",
+            "name": "jsonTable",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_jsonTable"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonTableAsString\u0028\u0029",
+            "name": "jsonTableAsString",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_jsonTableAsString"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonTableIsFull\u0028\u0029",
+            "name": "jsonTableIsFull",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_jsonTableIsFull"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonScore\u0028\u0029",
+            "name": "jsonScore",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_jsonScore"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonDelete\u0028\u0029",
+            "name": "jsonDelete",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_jsonDelete"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003Aapi\u0028\u0029",
+            "name": "api",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectController.html#method_api"
+        },                {
             "fqsen": "\\App\\Controller\\TwentyOneGameController",
             "name": "TwentyOneGameController",
             "summary": "",
@@ -666,6 +736,46 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Kernel.html"
         },                {
+            "fqsen": "\\App\\Project\\Table",
+            "name": "Table",
+            "summary": "",
+            "url": "classes/App-Project-Table.html"
+        },                {
+            "fqsen": "\\App\\Project\\Table\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020to\u0020create\u0020a\u0020Table.",
+            "url": "classes/App-Project-Table.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Project\\Table\u003A\u003AinsertCard\u0028\u0029",
+            "name": "insertCard",
+            "summary": "Method\u0020to\u0020add\u0020a\u0020card\u0020to\u0020a\u0020position.",
+            "url": "classes/App-Project-Table.html#method_insertCard"
+        },                {
+            "fqsen": "\\App\\Project\\Table\u003A\u003AgetTable\u0028\u0029",
+            "name": "getTable",
+            "summary": "Method\u0020to\u0020get\u0020the\u0020table.",
+            "url": "classes/App-Project-Table.html#method_getTable"
+        },                {
+            "fqsen": "\\App\\Project\\Table\u003A\u003AgetTableAsString\u0028\u0029",
+            "name": "getTableAsString",
+            "summary": "Method\u0020to\u0020get\u0020the\u0020table\u0020as\u0020strings.",
+            "url": "classes/App-Project-Table.html#method_getTableAsString"
+        },                {
+            "fqsen": "\\App\\Project\\Table\u003A\u003AcheckIfFull\u0028\u0029",
+            "name": "checkIfFull",
+            "summary": "Method\u0020check\u0020if\u0020table\u0020is\u0020full.",
+            "url": "classes/App-Project-Table.html#method_checkIfFull"
+        },                {
+            "fqsen": "\\App\\Project\\Table\u003A\u003AcalculateScore\u0028\u0029",
+            "name": "calculateScore",
+            "summary": "Method\u0020to\u0020calculate\u0020the\u0020final\u0020score.",
+            "url": "classes/App-Project-Table.html#method_calculateScore"
+        },                {
+            "fqsen": "\\App\\Project\\Table\u003A\u003A\u0024table",
+            "name": "table",
+            "summary": "",
+            "url": "classes/App-Project-Table.html#property_table"
+        },                {
             "fqsen": "\\App\\Repository\\LibraryRepository",
             "name": "LibraryRepository",
             "summary": "",
@@ -705,6 +815,11 @@ Search.appendIndex(
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Project",
+            "name": "Project",
+            "summary": "",
+            "url": "namespaces/app-project.html"
         },                {
             "fqsen": "\\App\\Repository",
             "name": "Repository",

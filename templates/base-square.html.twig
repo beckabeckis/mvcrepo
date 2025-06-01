@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/favicon.ico') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body class="square-body">
+        <header class="square-header" style="background-image: url({{ asset('img/background.jpg') }})">
+            <div class="site-header">
+                <span class="square-title"><h1>POKER SQUARES</hi></span>
+            </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="{{ path('proj_init') }}">Game</a></li>
+                <li><a href="{{ path('proj_about') }}">About</a></li>
+                <li><a href="{{ path('proj_api') }}">Api</a></li>
+                <li><a href="{{ path('home') }}">Home</a></li>
+            </ul>
+        </nav>
+        </header>
+        <div class="square-main">
+        {% block body %}{% endblock %}
+        </div>
+        <footer class="square-footer">
+            <div class="contacts">
+            <p>Kontakt:</p>
+                <ul>
+                    <li>Rebecka Corell - reco23@student.bth.se</li>
+                    <li>Projektlänk: <a href="https://github.com/beckabeckis/mvcrepo" target="_blank">https://github.com/beckabeckis/mvcrepo</a></li>
+                </ul>
+            </div>
+        </footer>
+    </body>
+</html>

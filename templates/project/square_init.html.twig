@@ -1,0 +1,140 @@
+{% extends "base-square.html.twig" %}
+
+{% block title %}Project landingpage
+{% endblock %}
+
+{% block body %}
+	<h1>Poker Squares</h1>
+
+	<p>
+		Spelets idé är att strategiskt lägga ut kort, en i taget, i en 5x5 rutnät och försöka få så mycket 
+        poäng som möjligt i varje rad, lodrätt och vågrätt. 
+	</p>
+	<p>
+		Poängen sätts såhär:
+	</p>
+    <table class="table-rules">
+	<tbody>
+		<tr>
+			<th>
+				<div class="center">Poker hand</div>
+			</th>
+			<th>
+				<div class="center">American<br/>point system</div>
+			</th>
+			<th>
+				<div class="center">English<br/>point system</div>
+			</th>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Royal_flush_(poker_hand)" class="mw-redirect" title="Royal flush (poker hand)">Royal flush</a>
+			</th>
+			<td>
+				<div class="center">100</div>
+			</td>
+			<td>
+				<div class="center">30</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Straight_flush" class="mw-redirect" title="Straight flush">Straight flush</a>
+			</th>
+			<td>
+				<div class="center">75</div>
+			</td>
+			<td>
+				<div class="center">30</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Four_of_a_kind_(poker)" class="mw-redirect" title="Four of a kind (poker)">Four of a kind</a>
+			</th>
+			<td>
+				<div class="center">50</div>
+			</td>
+			<td>
+				<div class="center">16</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Full_house_(poker)" class="mw-redirect" title="Full house (poker)">Full house</a>
+			</th>
+			<td>
+				<div class="center">25</div>
+			</td>
+			<td>
+				<div class="center">10</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Flush_(poker)" class="mw-redirect" title="Flush (poker)">Flush</a>
+			</th>
+			<td>
+				<div class="center">20</div>
+			</td>
+			<td>
+				<div class="center">5</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Straight_(poker)" class="mw-redirect" title="Straight (poker)">Straight</a>
+			</th>
+			<td>
+				<div class="center">15</div>
+			</td>
+			<td>
+				<div class="center">12</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Three_of_a_kind_(poker)" class="mw-redirect" title="Three of a kind (poker)">Three of a kind</a>
+			</th>
+			<td>
+				<div class="center">10</div>
+			</td>
+			<td>
+				<div class="center">6</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/Two_pair" class="mw-redirect" title="Two pair">Two pairs</a>
+			</th>
+			<td>
+				<div class="center">5</div>
+			</td>
+			<td>
+				<div class="center">3</div>
+			</td>
+		</tr>
+		<tr>
+			<th>
+				<a href="/wiki/One_pair_(poker)" class="mw-redirect" title="One pair (poker)">One pair</a>
+			</th>
+			<td>
+				<div class="center">2</div>
+			</td>
+			<td>
+				<div class="center">1</div>
+			</td>
+		</tr>
+	</tbody>
+    </table>
+
+	<p>
+		Lycka till!
+	</p>
+
+	<br>
+
+	<a href="{{ path('square_board') }}" class="square-button">Starta spelet</a>
+
+
+{% endblock %}

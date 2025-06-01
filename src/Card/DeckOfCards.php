@@ -127,6 +127,25 @@ class DeckOfCards
     }
 
     /**
+     * Method to return a random card and also remove the card from the deck.
+     *
+     * @param int $randomValue A value if user wants a specific card (or for testing), if null it will be a random card.
+     * @return CardGraphic random card from the deck.
+     */
+    public function drawRandomCardCard(int $randomValue = -1): CardGraphic
+    {
+        $randomCard = $this->deck[0];
+        if ((count($this->deck) > 1)) {
+            if ($randomValue == -1) {
+                $randomValue = random_int(0, (count($this->deck) - 1));
+            }
+            $randomCard = $this->deck[$randomValue];
+            array_splice($this->deck, $randomValue, 1);
+        }
+        return $randomCard;
+    }
+
+    /**
      * Method to returning the number of cards in the deck.
      *
      * @return int number of cards in the deck.

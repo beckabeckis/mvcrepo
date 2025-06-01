@@ -1,0 +1,38 @@
+{% extends "base-square.html.twig" %}
+
+{% block title %}Project about
+{% endblock %}
+
+{% block body %}
+	<h1>Om Poker Squares</h1>
+
+	<p>
+		Jag har valt att implementera spelet 'Poker Squares' som som går ut på att lägga 
+		ut kort i ett fem gånger fem rutnät och försöka få så bra händer i varje rad och 
+		kolumn. Jag har gjort en klass som har en field som håller en 2D array med 5x5 platser 
+		som i början alla har null som värde. I klassen finns bland annat en metod för att 
+		sätt in ett kort i 2D arrayen, en metod för att hämta ut hela 2D arayen (samt en metod 
+		för att bara hämta ut alla strängar i korten) och en metod för att räkna ut den totala 
+		poängen när hela 2D arrayen är fylld med kort.
+	</p>
+	<p>
+		Jag har gjort en router där man får en introduktion till spelet och en tabell över vilka 
+		poäng man får för olika händer samt en knapp för att starta spelet. Knappen tar en till 
+		en ny route som visar en tom 5x5 spelplan och ett första kort på sidan. Varje tomt kort 
+		är ett formulär (om platsen i arrayen är null annars visas kortet som ej är tryckbar) 
+		som har hidden inputs med positionen på spelplanet och värdet och färgen på det kort 
+		som ska läggas i positionen. I post routen skapar jag ett nytt kort med hjälp av värdet 
+		och färgen och skickar med det tillsammans med positionen till metoden för att lägga till 
+		kortet i klassens 2D array och sedan directar jag tillbaka till spelplanen.
+	</p>
+
+	<p>
+		Varje gång spelplanen laddas kollas det först om arrayen är full och om den är det så 
+		öppnar den en ny route istället som även den visar alla korten och även räknar ut och 
+		visar pången samt om man har vunnit eller inte. Jag har räknat ut poäng baserat på både 
+		de amerikanska och engelska reglerna och visar upp båda.
+	</p>
+
+
+
+{% endblock %}

@@ -35,7 +35,7 @@ class CardGraphicTest extends TestCase
         $this->assertInstanceOf("\App\Card\Card", $card);
 
         $res = $card->getCard();
-        $exp = ["🂴", 4];
+        $exp = ["🂴", 4, "heart"];
         $this->assertEquals($res, $exp);
     }
 
@@ -48,7 +48,7 @@ class CardGraphicTest extends TestCase
         $this->assertInstanceOf("\App\Card\Card", $card);
 
         $res = $card->getCard();
-        $exp = ["🃞", 13];
+        $exp = ["🃞", 13, "club"];
         $this->assertEquals($res, $exp);
     }
 
@@ -61,7 +61,7 @@ class CardGraphicTest extends TestCase
         $this->assertInstanceOf("\App\Card\Card", $card);
 
         $res = $card->getCard();
-        $exp = ["🃁", 1];
+        $exp = ["🃁", 1, "diamond"];
         $this->assertEquals($res, $exp);
     }
 
@@ -74,7 +74,7 @@ class CardGraphicTest extends TestCase
         $this->assertInstanceOf("\App\Card\Card", $card);
 
         $res = $card->getCard();
-        $exp = ["🂫", 11];
+        $exp = ["🂫", 11, "spade"];
         $this->assertEquals($res, $exp);
     }
 }

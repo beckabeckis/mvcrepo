@@ -62,8 +62,9 @@ class CardGraphic extends Card
         }
         $currCard = (string)$card;
         $currNum = (int)$this->number;
+        $currColor = $this->color;
 
-        $cardArr = [$currCard, $currNum];
+        $cardArr = [$currCard, $currNum, $currColor];
 
         return $cardArr;
     }

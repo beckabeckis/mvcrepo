@@ -53,7 +53,7 @@ class DeckOfCardsTest extends TestCase
         $this->assertInstanceOf("\App\Card\DeckOfCards", $deck);
 
         $res = $deck->drawRandomCard(1);
-        $exp = ["🂲", 2];
+        $exp = ["🂲", 2, "heart"];
         $this->assertEquals($res, $exp);
     }
 }

@@ -17,3 +17,6 @@ parameters:
         -
             identifier: property.unusedType
             path: ../../src/Entity/
+        -
+            identifier: missingType.iterableValue
+            path: ../../src/Project/Table.php

@@ -1,0 +1,16 @@
+{% extends "base-square.html.twig" %}
+
+{% block title %}Api{% endblock %}
+
+{% block body %}
+    <h1>Api</h1>
+
+    {% for routeName,route in routes %}
+        <li>
+            <a href="{{ path(route) }}">
+                <p>{{ routeName }}</p>
+            </a>
+        </li>
+
+    {% endfor %}
+{% endblock %}
