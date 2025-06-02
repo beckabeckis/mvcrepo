@@ -433,6 +433,11 @@ template {
   padding-top: 1.9rem;
 }
 
+.new-card {
+  float: right;
+  margin-right: 19%;
+}
+
 .black {
   color: black;
 }

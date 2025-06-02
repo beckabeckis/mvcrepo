@@ -116,13 +116,15 @@ class DeckOfCards
     public function drawRandomCard(int $randomValue = -1): array
     {
         $randomCard = $this->deck[0];
+        $removeValue = 0;
         if ((count($this->deck) > 1)) {
             if ($randomValue == -1) {
                 $randomValue = random_int(0, (count($this->deck) - 1));
             }
             $randomCard = $this->deck[$randomValue];
-            array_splice($this->deck, $randomValue, 1);
+            $removeValue = $randomValue;
         }
+        array_splice($this->deck, $removeValue, 1);
         return $randomCard->getCard();
     }
 

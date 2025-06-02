@@ -256,4 +256,20 @@ final class LibraryController extends AbstractController
 
         return $this->redirectToRoute('library_read_many');
     }
+
+    #[Route('/library/delete_all', name: 'library_delete_all')]
+    public function deleteLibraryAll(
+        ManagerRegistry $doctrine,
+        LibraryRepository $libraryRepository
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $library = $libraryRepository->findAll();
+
+        foreach ($library as $book) {
+            $entityManager->remove($book);
+        }
+        $entityManager->flush();
+
+        return $this->redirectToRoute('library_read_many');
+    }
 }

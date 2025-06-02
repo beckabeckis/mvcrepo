@@ -41,21 +41,25 @@ class DiceGameController extends AbstractController
     #[Route("/game/pig/test/roll/{num<\d+>}", name: "test_roll_num_dices")]
     public function testRollDices(int $num): Response
     {
-        if ($num > 99) {
-            throw new \Exception("Can not roll more than 99 dices!");
-        }
-
-        $diceRoll = [];
-        for ($i = 1; $i <= $num; $i++) {
-            $die = new DiceGraphic();
-            $die->roll();
-            $diceRoll[] = $die->getAsString();
-        }
-
         $data = [
-            "num_dices" => count($diceRoll),
-            "diceRoll" => $diceRoll,
+            "num_dices" => "-",
+            "diceRoll" => [],
+            "errormessage" => "Can not roll more than 99 dices!"
         ];
+
+        if ($num < 100) {
+            $diceRoll = [];
+            for ($i = 1; $i <= $num; $i++) {
+                $die = new DiceGraphic();
+                $die->roll();
+                $diceRoll[] = $die->getAsString();
+            }
+            $data = [
+                "num_dices" => count($diceRoll),
+                "diceRoll" => $diceRoll,
+                "errormessage" => ""
+            ];
+        }
 
         return $this->render('pig/test/roll_many.html.twig', $data);
     }
@@ -63,19 +67,24 @@ class DiceGameController extends AbstractController
     #[Route("/game/pig/test/dicehand/{num<\d+>}", name: "test_dicehand")]
     public function testDiceHand(int $num): Response
     {
-        if ($num > 99) {
-            throw new \Exception("Can not roll more than 99 dices!");
-        }
-
-        $hand = new DiceHand();
-        $hand->addDicesMixed($num);
-
-        $hand->roll();
-
         $data = [
-            "num_dices" => $hand->getNumberDices(),
-            "diceRoll" => $hand->getString(),
+            "num_dices" => "-",
+            "diceRoll" => "",
+            "errormessage" => "Can not roll more than 99 dices!"
         ];
+
+        if ($num < 100) {
+            $hand = new DiceHand();
+            $hand->addDicesMixed($num);
+
+            $hand->roll();
+
+            $data = [
+                "num_dices" => $hand->getNumberDices(),
+                "diceRoll" => $hand->getString(),
+                "errormessage" => ""
+            ];
+        }
 
         return $this->render('pig/test/dicehand.html.twig', $data);
     }

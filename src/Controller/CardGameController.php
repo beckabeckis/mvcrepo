@@ -104,7 +104,7 @@ class CardGameController extends AbstractController
     public function draw(
         SessionInterface $session
     ): Response {
-        if (!$session->get("deck_of_cards")) {
+        if (!$session->get("card_hand")) {
             $deck = new DeckOfCards();
             $hand = new CardHand($deck);
 
