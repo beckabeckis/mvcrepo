@@ -14,6 +14,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testAbout(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/proj/about');
 
@@ -26,6 +31,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testProj(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/proj');
 
@@ -38,6 +48,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testSquareBoard(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/proj');
         for ($i = 1; $i <= 52; $i++) {
@@ -54,6 +69,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testSquareBoardPost(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $postData = [
             'row' => "1",
             'col' => "2",
@@ -73,6 +93,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testSquareBoardPostCardsFull(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $postData = [
             'row' => "1",
             'col' => "2",
@@ -92,6 +117,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testSquareBoardFinishedCardsNotFilled(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/proj');
         $client->request('GET', '/proj/square_board_finished');
@@ -105,6 +135,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testSquareBoardFinishedCardsFilled(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/proj');
         $client->request('GET', '/proj/square_board_finished?testing=true');
@@ -118,6 +153,11 @@ class ProjectControllerTest extends WebTestCase
      */
     public function testApi(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/proj');
         $client->request('GET', '/proj/api');

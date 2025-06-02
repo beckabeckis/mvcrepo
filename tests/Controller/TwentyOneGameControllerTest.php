@@ -13,6 +13,11 @@ class TwentyOneGameControllerTest extends WebTestCase
      */
     public function testGame(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/game');
 
@@ -24,6 +29,11 @@ class TwentyOneGameControllerTest extends WebTestCase
      */
     public function testDoc(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/game/doc');
 
@@ -35,6 +45,11 @@ class TwentyOneGameControllerTest extends WebTestCase
      */
     public function testBoard(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/game/board');
 
@@ -46,6 +61,11 @@ class TwentyOneGameControllerTest extends WebTestCase
      */
     public function testBoardDrawn(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/game/board');
         $client->request('GET', '/game/board_drawn');
@@ -100,6 +120,11 @@ class TwentyOneGameControllerTest extends WebTestCase
      */
     public function testBoardEss(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/game/board');
         $client->request('GET', '/game/board_ess');
@@ -112,6 +137,11 @@ class TwentyOneGameControllerTest extends WebTestCase
      */
     public function testBoardlost(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/game/board');
         $client->request('GET', '/game/board_lost');
@@ -124,6 +154,11 @@ class TwentyOneGameControllerTest extends WebTestCase
      */
     public function testBoardEnd(): void
     {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
         $client = static::createClient();
         $client->request('GET', '/game/board');
         $client->request('GET', '/game/board_end');
