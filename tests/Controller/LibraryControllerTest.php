@@ -26,6 +26,25 @@ class LibraryControllerTest extends WebTestCase
     }
 
     /**
+     * Test /api/library/books route with no books in library.
+     */
+    public function testIndexWithNoBooks(): void
+    {
+        if (isset($_ENV['SCRUTINIZER'])) {
+            $this->markTestSkipped(
+                'Scrutinizer CI build'
+            );
+        }
+        $client = static::createClient();
+        $client->catchExceptions(false);
+        $client->request('GET', '/library/delete_all');
+        $client->request('GET', '/library');
+
+        $this->assertResponseIsSuccessful();
+        $client->request('GET', '/library/reset');
+    }
+
+    /**
      * Test library/create route.
      */
     public function testCreateBook(): void

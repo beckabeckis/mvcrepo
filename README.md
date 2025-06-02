@@ -25,6 +25,9 @@ Here are the most used languages and frameworks used in the projekt.
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
+### About
+
+This repository contains my work from the course MVC from Blekinge Tekninska Högskola. It's a Symfony App with diffrent diffrent mini projects to learn how Symfony, PHP, linters, PhpMetrics, Scrutinizer, ORM, PhpUnit and a lot of other important tools works. The last project that ties everything together is a cardgame named Poker Squares.
 
 <!-- GETTING STARTED -->
 ## Clone my repository

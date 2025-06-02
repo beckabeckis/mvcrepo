@@ -2,16 +2,7 @@ imports:
     - php
 
 filter:
-    excluded_paths: [
-        vendor/*, 
-        test/*,
-        tests/Controller/AppControllerTwigTest.php,
-        tests/Controller/CardGameControllerTest.php,
-        tests/Controller/DiceControllerTest.php,
-        tests/Controller/LibraryControllerTest.php,
-        tests/Controller/ProjectControllerTest.php,
-        tests/Controller/TwentyOneControllerTest.php
-        ]
+    excluded_paths: [vendor/*, test/*]
 
 build:
     image: default-bionic
