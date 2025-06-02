@@ -5,7 +5,7 @@ namespace App\Test\Controller;
 use App\Controller\DiceController;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class DiceeControllerTest extends WebTestCase 
+class DiceeControllerTest extends WebTestCase
 {
     /**
      * Test /game/pig route.

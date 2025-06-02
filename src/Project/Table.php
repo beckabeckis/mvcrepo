@@ -50,7 +50,7 @@ class Table
     /**
      * Method to get the table as strings.
      *
-     * @return list<list<list<string|null>>> table as strings
+     * @return array|array<mixed,array|array<mixed,array<integer,null>>> table as strings
      */
     public function getTableAsString(): array
     {
@@ -135,23 +135,20 @@ class Table
                 if ($card1[2] === $card2[2] &&
                     $card1[2] === $card3[2] &&
                     $card1[2] === $card4[2] &&
-                    $card1[2] === $card5[2]) 
-                {
+                    $card1[2] === $card5[2]) {
                     $amePointsToAdd = 20;
                     $engPointsToAdd = 5;
                     if ($values[0] == 1 && //check royal flush first
                         $values[1] == 10 &&
                         $values[2] == 11 &&
                         $values[3] == 12 &&
-                        $values[4] == 13) 
-                    {
+                        $values[4] == 13) {
                         $amePointsToAdd = 100;
                         $engPointsToAdd = 30;
                     } elseif (($values[0] + 1) == $values[1] && // Straight fulsh
                         ($values[1] + 1) == $values[2] &&
                         ($values[2] + 1) == $values[3] &&
-                        ($values[3] + 1) == $values[4]) 
-                    {
+                        ($values[3] + 1) == $values[4]) {
                         $amePointsToAdd = 75;
                         $engPointsToAdd = 30;
                     }

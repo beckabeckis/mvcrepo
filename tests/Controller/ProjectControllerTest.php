@@ -20,7 +20,7 @@ class ProjectControllerTest extends WebTestCase
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('p', 'Jag har valt');
     }
-    
+
     /**
      * Test /proj route no session.
      */
@@ -28,7 +28,7 @@ class ProjectControllerTest extends WebTestCase
     {
         $client = static::createClient();
         $client->request('GET', '/proj');
-        
+
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('p', 'Spelets idé är');
     }
@@ -43,8 +43,9 @@ class ProjectControllerTest extends WebTestCase
         for ($i = 1; $i <= 52; $i++) {
             $client->request('GET', '/proj/square_board');
 
-            $this->assertResponseIsSuccessful('p', 'Nytt kort:');
         }
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('p', 'Nytt kort:');
 
     }
 
@@ -96,7 +97,7 @@ class ProjectControllerTest extends WebTestCase
         $client->request('GET', '/proj/square_board_finished');
 
         $this->assertResponseIsSuccessful();
-        $this->assertResponseIsSuccessful('h3', 'Amerikanska poäng:');
+        $this->assertSelectorTextContains('h3', 'Amerikanska poäng:');
     }
 
     /**
@@ -109,7 +110,7 @@ class ProjectControllerTest extends WebTestCase
         $client->request('GET', '/proj/square_board_finished?testing=true');
 
         $this->assertResponseIsSuccessful();
-        $this->assertResponseIsSuccessful('h3', 'Engelska poäng:');
+        $this->assertSelectorTextContains('h3', 'Amerikanska poäng:');
     }
 
     /**

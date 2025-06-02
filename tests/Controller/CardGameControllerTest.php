@@ -5,7 +5,7 @@ namespace App\Test\Controller;
 use App\Controller\CardGameController;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class CardGameControllerTest extends WebTestCase 
+class CardGameControllerTest extends WebTestCase
 {
     /**
      * Test /session and /session/delete route.

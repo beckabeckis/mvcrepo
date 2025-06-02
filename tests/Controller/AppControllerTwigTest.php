@@ -5,7 +5,7 @@ namespace App\Test\Controller;
 use App\Controller\AppControllerTwig;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class AppControllerTwigTest extends WebTestCase 
+class AppControllerTwigTest extends WebTestCase
 {
     /**
      * Test / route.

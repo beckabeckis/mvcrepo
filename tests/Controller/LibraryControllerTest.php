@@ -7,7 +7,7 @@ use App\Controller\LibraryController;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class LibraryControllerTest extends WebTestCase 
+class LibraryControllerTest extends WebTestCase
 {
     /**
      * Test library route.
@@ -138,7 +138,7 @@ class LibraryControllerTest extends WebTestCase
     //     $this->expectException(\createNotFoundException::class);
     // }
 
-    
+
     /**
      * Test /api/library/books route.
      */

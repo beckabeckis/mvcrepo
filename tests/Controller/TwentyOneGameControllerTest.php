@@ -6,7 +6,7 @@ use App\Entity\Library;
 use App\Controller\TwentyOneGameController;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
-class TwentyOneGameControllerTest extends WebTestCase 
+class TwentyOneGameControllerTest extends WebTestCase
 {
     /**
      * Test /game route.
