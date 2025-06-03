@@ -165,7 +165,6 @@
     </section>
     <section id="kmom06">
         <h2>kmom06</h2>
-        <p>Redovisningstext för kmom06</p>
         <p>
             PhpMetrics är ett bra verktyg för att kunna se en bra överblick på många olika aspekter inom clean code. 
             Den visade en bra översikt över complexitet och vilka klasser man kan fokusera mer på för att få ner komplexiteten.
@@ -190,6 +189,66 @@
     </section>
     <section id="kmom10">
         <h2>kmom10</h2>
-        <p>Redovisningstext för kmom10</p>
+        <h3>1.</h3>
+        <h4>Krav 1-3</h3>
+        <p>
+            Jag har valt att göra en implementation av kortspelet Poker Squares. Jag har börjat med att göra en klass med namn 
+            Tables för att kunna spara vad alla positioner i spelet innehåller, antingen är det null eller så innehåller det en 
+            instans av ett CardGraphic. Detta sparas i ett field värde som är en 2D array. En array i arrayen för varje rad. 
+            Sedan finns det metoder för att bland annat lägga till ett kort i en position, kolla om alla positioner är fyllda 
+            och räkna ut slut poängen.
+        </p>
+        <p>
+            Sedan har jag gjort en route för /proj som skapar en ny instans av Table och DeckOfCards klasserna och spara de i 
+            sessionen. På twig sidan beskrivs hur spelet fungerar och visar en tabell över poängsystemen samt så finns en knapp 
+            för att starta spelet och ta en till routern /proj/square_board. Där hämtas Table och DeckOfCards instanserna från 
+            sessionen och hämtar ett random kort från decken och 2D arrayen från table. På twig sidan visas kortet som ska läggas 
+            ut och alla korten från arrayen i ett 5x5 rutnät, om positionen har ett kort i sig så visas kortet men om det är null 
+            så görs ett form som skcikar med positionen och valören och färgen på kortet som ska läggas ut i hidden inputs som vid 
+            tryckning skickas genom en post route som lägger till kortet i table, kollar om table är fullt och sedan skickar en 
+            vidare. Om table är inte är full så skickas man tillbaka annars så skickas man till routen /proj/square_board_finish 
+            där metoden för att räkna ut poängen och om man har fått tillräckligt poäng för att vinna (både genom den amerikanska 
+            och engelska poängsystemen) vilket tillsammans med alla kort visas på twig sidan.
+        </p>
+        <p>
+            Jag har ändrat färgschemat och fonterna på sidorna som har med projektet att göra till att passa mer till en 
+            kortspelssida. Jag har valt den klassiska emeraldgröna färgen som passar till temat och en header bild som har 
+            lite mörkare drag som jag också tyckte passar bra. Det är en lite ’finare’ mer klassisk font till header titeln 
+            som syns mer och jag har även ändrat fonterna på rubriker och brödtext för att passa. När man trycker på 
+            menyvalet ’projekt’ så ändras menyn till att bara visa de val som har med projektet att göra och ett menyval ’home’ 
+            för att komma tillbaka till startsidan och se de andra menyvalen.
+        </p>
+        <p>
+            Jag har även gjort en route /proj/about som kort beskriver hur jag har implmenterat spelet. Jag har även uppdaterat 
+            min README.md fil för att skriva lite mer varför repot finns och vad den innehåller.
+        </p>
+        <p>
+            Jag har även skrivit enhetstester för de klasser och controllers som jag har gjort till projektet och med phpunit 
+            så når de berörda testerna 100% kodtäckning. Jag har även genretat dokumentation med phpdoc och genererat metrics 
+            med phpmetrics.
+        </p>
+        <h4>Krav 4</h3>
+        <p>
+            Jag har skapat 6 stycken JSON API routes till projektet. En som visar de kort som är kvar i decken, en som visar 
+            alla positioner i table, en som visar alla positioner i table fast omgjort till kortens string i stället för 
+            instansen av kort klassen, en som visar om 2d arrayen är full eller inte, en som visar poängen och om man har 
+            vunnit (endast om 2d arrayen är fylld) och en api som tar bort allt i sessionen. Alla länkar till apierna finns 
+            på landningsrouten /proj/api.
+        </p>
+        <h3>2.</h3>
+        <p>
+            Det gick okej att genomföra projektet. Denna kurs hann jag tyvärr inte göra alla krav men jag känner att jag 
+            löste själva kortspelsdelen väldigt bra. Det var en del problem som tog lite tid att lösa och det som var mest 
+            jobbigt med hela projektet var att få Scrutinizer att fungera. Jag tror egentligen att hela projektet var rimligt 
+            med omfattning och tid men jag har inte mått så bra sista delen av kursen så jag har inte haft energi nog att nå 
+            de högre kraven, men jag är glad att klara av kursen i alla fall och får nöja mig med ett lägre betyg.
+        </p>
+        <h3>3.</h3>
+        <p>
+            Jag tycker att det var en bra kurs och jag tror det är viktigt att lära sig dem här sakerna. Det känns som att man 
+            knöt ihop alla kunskaper genom åren och fick lära sig mycket mer hur man skapar ett eget projekt. Det ända var att 
+            det ibland var lite röriga instruktioner, men min trötta hjärna kan ha bidragit till den uppfattnignen. Jag är överlag 
+            nöjd och skulle rekommendera kursen till vänner, 9/10!
+        </p>
     </section>
 {% endblock %}
