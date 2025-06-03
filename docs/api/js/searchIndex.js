@@ -426,6 +426,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-LibraryController.html#method_libraryReset"
         },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AdeleteLibraryAll\u0028\u0029",
+            "name": "deleteLibraryAll",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_deleteLibraryAll"
+        },                {
             "fqsen": "\\App\\Controller\\ProjectController",
             "name": "ProjectController",
             "summary": "",
@@ -456,40 +461,45 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-ProjectController.html#method_squareBoardFinished"
         },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonDeck\u0028\u0029",
-            "name": "jsonDeck",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_jsonDeck"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonTable\u0028\u0029",
-            "name": "jsonTable",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_jsonTable"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonTableAsString\u0028\u0029",
-            "name": "jsonTableAsString",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_jsonTableAsString"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonTableIsFull\u0028\u0029",
-            "name": "jsonTableIsFull",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_jsonTableIsFull"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonScore\u0028\u0029",
-            "name": "jsonScore",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_jsonScore"
-        },                {
-            "fqsen": "\\App\\Controller\\ProjectController\u003A\u003AjsonDelete\u0028\u0029",
-            "name": "jsonDelete",
-            "summary": "",
-            "url": "classes/App-Controller-ProjectController.html#method_jsonDelete"
-        },                {
             "fqsen": "\\App\\Controller\\ProjectController\u003A\u003Aapi\u0028\u0029",
             "name": "api",
             "summary": "",
             "url": "classes/App-Controller-ProjectController.html#method_api"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerJson",
+            "name": "ProjectControllerJson",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerJson.html"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerJson\u003A\u003AjsonDeck\u0028\u0029",
+            "name": "jsonDeck",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerJson.html#method_jsonDeck"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerJson\u003A\u003AjsonTable\u0028\u0029",
+            "name": "jsonTable",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerJson.html#method_jsonTable"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerJson\u003A\u003AjsonTableAsString\u0028\u0029",
+            "name": "jsonTableAsString",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerJson.html#method_jsonTableAsString"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerJson\u003A\u003AjsonTableIsFull\u0028\u0029",
+            "name": "jsonTableIsFull",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerJson.html#method_jsonTableIsFull"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerJson\u003A\u003AjsonScore\u0028\u0029",
+            "name": "jsonScore",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerJson.html#method_jsonScore"
+        },                {
+            "fqsen": "\\App\\Controller\\ProjectControllerJson\u003A\u003AjsonDelete\u0028\u0029",
+            "name": "jsonDelete",
+            "summary": "",
+            "url": "classes/App-Controller-ProjectControllerJson.html#method_jsonDelete"
         },                {
             "fqsen": "\\App\\Controller\\TwentyOneGameController",
             "name": "TwentyOneGameController",
