@@ -43,7 +43,3 @@ framework:
 # when@test:
 #    webpack_encore:
 #        strict_mode: false
-
-when@test:
-   assets:
-        json_manifest_path: '%kernel.project_dir%/manifest.json'

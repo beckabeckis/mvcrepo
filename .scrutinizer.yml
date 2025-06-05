@@ -23,7 +23,8 @@ build:
                     #- phpcs-run # Not used, missing config file
     tests:
         override:
-            -   command: "composer phpunit"
+            -   command: 'XDEBUG_MODE=coverage vendor/bin/phpunit --configuration phpunit.xml.dist --testsuite scrutinizer'
+                # command: "composer phpunit"
                 # command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
                 coverage:
                     file: "docs/coverage.clover"

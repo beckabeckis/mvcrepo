@@ -21,6 +21,9 @@
         <testsuite name="Project Test Suite">
             <directory>tests</directory>
         </testsuite>
+        <testsuite name="scrutinizer">
+            <directory>testsscrut</directory>
+        </testsuite>
     </testsuites>
 
     <coverage processUncoveredFiles="true">
